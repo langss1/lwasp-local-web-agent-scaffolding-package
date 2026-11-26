@@ -1,0 +1,100 @@
+# ablation.yaml — Ablation additive B0..B10 (plan8.md).
+# Tiap tangga menambah SATU komponen dari base model (B0) ke sistem penuh (B10).
+# Semua toggle di-set EKSPLISIT (orchestrator default True untuk sebagian toggle,
+# jadi yang OFF wajib ditulis false). Budget: 6 iterasi / 240s (B0 = 1 shot).
+
+experiment:
+  runs_per_scenario: 1           # N=1 (plan8.md); untuk klaim statistik ulang N>1 pada tangga kunci
+  scenarios_file: "eval/scenarios.yaml"
+  output_dir: "runs/"
+  record_hardware: true
+  statistical_test: false
+
+metrics:
+  - success
+  - iterations_to_success
+  - wall_clock_s
+  - peak_vram_mb
+  - peak_ram_mb
+  - tokens_used
+  - guardrail_blocks
+  - backtracks
+
+derived_metrics:
+  - name: "success_per_time"
+    formula: "success_rate / mean_wall_clock_s"
+  - name: "success_per_vram"
+    formula: "success_rate / mean_peak_vram_mb"
+
+# Tiap 'components' menimpa components di config.yaml. Kumulatif: tangga teratas = full.
+configurations:
+
+  - id: "B0"
+    label: "Pure base LLM (NO scaffolding; task guidance + raw feedback only; maks 5 tembak)"
+    max_iterations: 5
+    components: {pure_mode: true, rag: false, reflection: false, guardrail: false, state_graph: false,
+                 long_term_memory: false, web_search_fallback: false,
+                 working_memory: false, tools_mcp: false, sandbox: false, web_search: false}
+
+  - id: "B1"
+    label: "Agent framework (ReAct terstruktur: prompt berfase + working memory + OBSERVE/VERIFY; NOL pengetahuan)"
+    components: {pure_mode: false, rag: false, reflection: false, guardrail: false, state_graph: false,
+                 long_term_memory: false, web_search_fallback: false,
+                 working_memory: true, tools_mcp: false, sandbox: false, web_search: false, skills: false}
+
+  - id: "B2"
+    label: "B1 + RAG"
+    components: {pure_mode: false, rag: true, reflection: false, guardrail: false, state_graph: false,
+                 long_term_memory: false, web_search_fallback: false,
+                 working_memory: true, tools_mcp: false, sandbox: false, web_search: false, skills: false}
+
+  - id: "B3"
+    label: "B2 + reflection"
+    components: {pure_mode: false, rag: true, reflection: true, guardrail: false, state_graph: false,
+                 long_term_memory: false, web_search_fallback: false,
+                 working_memory: true, tools_mcp: false, sandbox: false, web_search: false, skills: false}
+
+  - id: "B4"
+    label: "B3 + tools/MCP (RUN_TOOL)"
+    components: {pure_mode: false, rag: true, reflection: true, guardrail: false, state_graph: false,
+                 long_term_memory: false, web_search_fallback: false,
+                 working_memory: true, tools_mcp: true, sandbox: false, web_search: false, skills: false}
+
+  - id: "B5"
+    label: "B4 + sandbox (RUN_SCRIPT)"
+    components: {pure_mode: false, rag: true, reflection: true, guardrail: false, state_graph: false,
+                 long_term_memory: false, web_search_fallback: false,
+                 working_memory: true, tools_mcp: true, sandbox: true, web_search: false, skills: false}
+
+  - id: "B6"
+    label: "B5 + guardrail semantik (KONTRIBUSI #1)"
+    components: {pure_mode: false, rag: true, reflection: true, guardrail: true, state_graph: false,
+                 long_term_memory: false, web_search_fallback: false,
+                 working_memory: true, tools_mcp: true, sandbox: true, web_search: false, skills: false}
+
+  - id: "B7"
+    label: "B6 + state-graph backtracking (KONTRIBUSI #2)"
+    components: {pure_mode: false, rag: true, reflection: true, guardrail: true, state_graph: true,
+                 long_term_memory: false, web_search_fallback: false,
+                 working_memory: true, tools_mcp: true, sandbox: true, web_search: false, skills: false}
+
+  - id: "B8"
+    label: "B7 + long-term memory"
+    components: {pure_mode: false, rag: true, reflection: true, guardrail: true, state_graph: true,
+                 long_term_memory: true, web_search_fallback: false,
+                 working_memory: true, tools_mcp: true, sandbox: true, web_search: false, skills: false}
+
+  - id: "B9"
+    label: "B8 + web search"
+    components: {pure_mode: false, rag: true, reflection: true, guardrail: true, state_graph: true,
+                 long_term_memory: true, web_search_fallback: false,
+                 working_memory: true, tools_mcp: true, sandbox: true, web_search: true, skills: false}
+
+  - id: "B10"
+    label: "B9 + skill playbook (= SISTEM PENUH)"
+    components: {pure_mode: false, rag: true, reflection: true, guardrail: true, state_graph: true,
+                 long_term_memory: true, web_search_fallback: false,
+                 working_memory: true, tools_mcp: true, sandbox: true, web_search: true, skills: true}
+
+# Analisis: bandingkan B0..B10 pada success_rate DAN iterations_to_success.
+# Isolasi guardrail = B6->B7; isolasi state-graph = B7->B8. N=1 = limitasi statistik.

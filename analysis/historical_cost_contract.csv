@@ -1,0 +1,10 @@
+﻿operation,wall_clock_contract,token_contract,source
+parse_repair,included for calls within run(),prompt_eval_count + eval_count for successful server responses,cognitive_engine._call_model and step retry loop
+tool_browser_work,included when invoked within run(),not model tokens; subsequent prompts containing tool output count normally,orchestrator.run dispatch and _verify_xss
+model_loading,loading latency within first chat may be included; initialization before run() excluded,no separate loading tokens,start=time.monotonic() in run(); engine constructed earlier
+oracle_live_verification,included when run() invokes it,no tokens unless another model call uses the observation,HTTP interpreters / browser verifier
+independent_posthoc_replay,not measured by original run wall-clock,not included,no archived separate replay experiment
+failed_timedout_actions,elapsed waiting within run() included if report completes,only counts returned by server; missing response usage not estimated,exceptions/timeouts; outer kill may leave no report
+generation_action_verification_split,not reconstructible from trace timestamps alone; per-stage timers not retained,aggregate engine tokens only,no invented retrospective timing
+VRAM,whole-device NVML sampled at selected points,not applicable,HardwareSampler; not isolated model VRAM
+RAM,orchestrator-process resident memory,not applicable,psutil.Process.memory_info().rss; not total serving-stack memory

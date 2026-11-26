@@ -1,0 +1,13 @@
+dimension,value,status
+controller,"PentestGPT (GreyDGL) legacy / pentestgpt v1.0.0 (v2.0.0 legacy)",pinned
+commit,e8b1bb77d1ac00329675cec3b060aba971ec1ac8,pinned
+entrypoint,pentestgpt-legacy (pentestgpt_legacy.main:main),verified
+llm_path,openai_compatible provider -> http://127.0.0.1:11434/v1,verified
+reasoning_model,ollama:qwen2.5 (same frozen digest as our arms),configured
+parsing_model,ollama:qwen2.5,configured
+llm_roundtrip,"send_new_message -> correct completion (~17.6s)",PASS
+autonomous_tool_executor,"none in pentestgpt_legacy (no subprocess/http-to-target)",ABSENT
+action_observation_step,"human operator pastes tool/web output (prompt_ask REPL)",HUMAN_IN_LOOP
+full_cycle_without_operator,"model->action->tool->observation without un-matched human",FAIL
+matched_autonomous_headtohead,"not possible without changing design / adding operator",NOT_PRODUCED
+resolution,"conditional escape: narrow Table 9 to architectural/capability comparison",documented

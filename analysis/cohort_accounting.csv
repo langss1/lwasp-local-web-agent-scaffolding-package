@@ -1,0 +1,6 @@
+﻿cohort,distinct_executions,recorded_success,meaning,overlap_explanation
+flagged_retry,20,12,new attempts on prior failed non-CAPTCHA D cells,not included in original 35
+canary,5,5,new attempts on sampled prior successes,not included in original 35
+canonical_probe,26,22,new follow-up executions on 23 failed + 3 no-report cells,part of original 35
+confirmation_seed42,3,3,three new executions supplement Hard-Set FULL 13/16,part of original 35; also part of cumulative 9/9
+confirmation_seed7_123,6,6,six additional executions on the same three scenarios,part of original 35; makes cumulative 9/9

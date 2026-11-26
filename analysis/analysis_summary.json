@@ -1,0 +1,772 @@
+{
+  "analysis_seed": 20261105,
+  "bootstrap_replications": 20000,
+  "new_experiments": 0,
+  "archive_inventory": {
+    "run_ids": 2515,
+    "archive_copies": 3796,
+    "conflicting_report_ids": 222
+  },
+  "initial_sweep": {
+    "q25_L1": {
+      "valid": 120,
+      "success": 75
+    },
+    "q25_L3": {
+      "valid": 118,
+      "success": 98
+    },
+    "q35_L1": {
+      "valid": 120,
+      "success": 69
+    },
+    "q35_L3": {
+      "valid": 117,
+      "success": 94
+    }
+  },
+  "primary": [
+    {
+      "comparison": "q25",
+      "n_pairs": 117,
+      "n_scenarios": 39,
+      "reference_success": 75,
+      "treatment_success": 104,
+      "reference_osr": 64.1025641025641,
+      "treatment_osr": 88.88888888888889,
+      "SS": 69,
+      "SG": 6,
+      "GS": 35,
+      "GG": 7,
+      "difference_pp": 24.786324786324787,
+      "scenario_cluster_ci_pp": [
+        11.111111111111112,
+        39.31623931623931
+      ],
+      "exact_mcnemar_descriptive": 4.873598300036974e-06,
+      "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+    },
+    {
+      "comparison": "q35",
+      "n_pairs": 117,
+      "n_scenarios": 39,
+      "reference_success": 69,
+      "treatment_success": 103,
+      "reference_osr": 58.97435897435897,
+      "treatment_osr": 88.03418803418803,
+      "SS": 64,
+      "SG": 5,
+      "GS": 39,
+      "GG": 9,
+      "difference_pp": 29.05982905982906,
+      "scenario_cluster_ci_pp": [
+        16.239316239316242,
+        41.88034188034188
+      ],
+      "exact_mcnemar_descriptive": 1.4051624930289108e-07,
+      "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+    }
+  ],
+  "primary_pooled": {
+    "comparison": "pooled",
+    "n_pairs": 234,
+    "n_scenarios": 39,
+    "reference_success": 144,
+    "treatment_success": 207,
+    "reference_osr": 61.53846153846154,
+    "treatment_osr": 88.46153846153847,
+    "SS": 133,
+    "SG": 11,
+    "GS": 74,
+    "GG": 16,
+    "difference_pp": 26.923076923076923,
+    "scenario_cluster_ci_pp": [
+      15.811965811965814,
+      38.46153846153847
+    ],
+    "exact_mcnemar_descriptive": 1.2888315230163817e-12,
+    "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+  },
+  "did": {
+    "estimate_pp": 4.2735042735042725,
+    "scenario_cluster_ci_pp": [
+      -10.256410256410255,
+      17.948717948717956
+    ]
+  },
+  "ablations": [
+    {
+      "comparison": "final_loo:L-RAG",
+      "n_pairs": 39,
+      "n_scenarios": 39,
+      "reference_success": 34,
+      "treatment_success": 32,
+      "reference_osr": 87.17948717948718,
+      "treatment_osr": 82.05128205128206,
+      "SS": 29,
+      "SG": 5,
+      "GS": 3,
+      "GG": 2,
+      "difference_pp": -5.128205128205129,
+      "scenario_cluster_ci_pp": [
+        -20.512820512820515,
+        7.6923076923076925
+      ],
+      "exact_mcnemar_descriptive": 0.7265625,
+      "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+    },
+    {
+      "comparison": "final_loo:L-REF",
+      "n_pairs": 39,
+      "n_scenarios": 39,
+      "reference_success": 34,
+      "treatment_success": 34,
+      "reference_osr": 87.17948717948718,
+      "treatment_osr": 87.17948717948718,
+      "SS": 30,
+      "SG": 4,
+      "GS": 4,
+      "GG": 1,
+      "difference_pp": 0.0,
+      "scenario_cluster_ci_pp": [
+        -12.820512820512821,
+        15.384615384615385
+      ],
+      "exact_mcnemar_descriptive": 1.0,
+      "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+    },
+    {
+      "comparison": "final_loo:L-GRD",
+      "n_pairs": 39,
+      "n_scenarios": 39,
+      "reference_success": 34,
+      "treatment_success": 34,
+      "reference_osr": 87.17948717948718,
+      "treatment_osr": 87.17948717948718,
+      "SS": 31,
+      "SG": 3,
+      "GS": 3,
+      "GG": 2,
+      "difference_pp": 0.0,
+      "scenario_cluster_ci_pp": [
+        -12.820512820512821,
+        12.820512820512821
+      ],
+      "exact_mcnemar_descriptive": 1.0,
+      "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+    },
+    {
+      "comparison": "final_loo:L-TLS",
+      "n_pairs": 39,
+      "n_scenarios": 39,
+      "reference_success": 34,
+      "treatment_success": 32,
+      "reference_osr": 87.17948717948718,
+      "treatment_osr": 82.05128205128206,
+      "SS": 28,
+      "SG": 6,
+      "GS": 4,
+      "GG": 1,
+      "difference_pp": -5.128205128205129,
+      "scenario_cluster_ci_pp": [
+        -20.512820512820515,
+        10.256410256410257
+      ],
+      "exact_mcnemar_descriptive": 0.75390625,
+      "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+    },
+    {
+      "comparison": "final_loo:L-N3",
+      "n_pairs": 39,
+      "n_scenarios": 39,
+      "reference_success": 34,
+      "treatment_success": 35,
+      "reference_osr": 87.17948717948718,
+      "treatment_osr": 89.74358974358974,
+      "SS": 31,
+      "SG": 3,
+      "GS": 4,
+      "GG": 1,
+      "difference_pp": 2.5641025641025643,
+      "scenario_cluster_ci_pp": [
+        -10.256410256410257,
+        15.384615384615385
+      ],
+      "exact_mcnemar_descriptive": 1.0,
+      "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+    },
+    {
+      "comparison": "final_loo:L-SG",
+      "n_pairs": 39,
+      "n_scenarios": 39,
+      "reference_success": 34,
+      "treatment_success": 35,
+      "reference_osr": 87.17948717948718,
+      "treatment_osr": 89.74358974358974,
+      "SS": 30,
+      "SG": 4,
+      "GS": 5,
+      "GG": 0,
+      "difference_pp": 2.5641025641025643,
+      "scenario_cluster_ci_pp": [
+        -12.820512820512821,
+        17.94871794871795
+      ],
+      "exact_mcnemar_descriptive": 1.0,
+      "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+    },
+    {
+      "comparison": "final_loo:L-C2",
+      "n_pairs": 39,
+      "n_scenarios": 39,
+      "reference_success": 34,
+      "treatment_success": 36,
+      "reference_osr": 87.17948717948718,
+      "treatment_osr": 92.3076923076923,
+      "SS": 33,
+      "SG": 1,
+      "GS": 3,
+      "GG": 2,
+      "difference_pp": 5.128205128205129,
+      "scenario_cluster_ci_pp": [
+        -5.128205128205129,
+        15.384615384615385
+      ],
+      "exact_mcnemar_descriptive": 0.625,
+      "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+    },
+    {
+      "comparison": "final_loo:L-K4",
+      "n_pairs": 39,
+      "n_scenarios": 39,
+      "reference_success": 34,
+      "treatment_success": 37,
+      "reference_osr": 87.17948717948718,
+      "treatment_osr": 94.87179487179488,
+      "SS": 33,
+      "SG": 1,
+      "GS": 4,
+      "GG": 1,
+      "difference_pp": 7.6923076923076925,
+      "scenario_cluster_ci_pp": [
+        -2.5641025641025643,
+        20.512820512820515
+      ],
+      "exact_mcnemar_descriptive": 0.375,
+      "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+    },
+    {
+      "comparison": "final_loo:L-K7",
+      "n_pairs": 39,
+      "n_scenarios": 39,
+      "reference_success": 34,
+      "treatment_success": 33,
+      "reference_osr": 87.17948717948718,
+      "treatment_osr": 84.61538461538461,
+      "SS": 30,
+      "SG": 4,
+      "GS": 3,
+      "GG": 2,
+      "difference_pp": -2.5641025641025643,
+      "scenario_cluster_ci_pp": [
+        -15.384615384615385,
+        10.256410256410257
+      ],
+      "exact_mcnemar_descriptive": 1.0,
+      "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+    },
+    {
+      "comparison": "final_loo:L-K8",
+      "n_pairs": 39,
+      "n_scenarios": 39,
+      "reference_success": 34,
+      "treatment_success": 32,
+      "reference_osr": 87.17948717948718,
+      "treatment_osr": 82.05128205128206,
+      "SS": 29,
+      "SG": 5,
+      "GS": 3,
+      "GG": 2,
+      "difference_pp": -5.128205128205129,
+      "scenario_cluster_ci_pp": [
+        -20.512820512820515,
+        7.6923076923076925
+      ],
+      "exact_mcnemar_descriptive": 0.7265625,
+      "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+    },
+    {
+      "comparison": "final_loo:L-K12",
+      "n_pairs": 39,
+      "n_scenarios": 39,
+      "reference_success": 34,
+      "treatment_success": 35,
+      "reference_osr": 87.17948717948718,
+      "treatment_osr": 89.74358974358974,
+      "SS": 32,
+      "SG": 2,
+      "GS": 3,
+      "GG": 2,
+      "difference_pp": 2.5641025641025643,
+      "scenario_cluster_ci_pp": [
+        -7.6923076923076925,
+        12.820512820512821
+      ],
+      "exact_mcnemar_descriptive": 1.0,
+      "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+    },
+    {
+      "comparison": "final_loo:L-K14",
+      "n_pairs": 39,
+      "n_scenarios": 39,
+      "reference_success": 34,
+      "treatment_success": 35,
+      "reference_osr": 87.17948717948718,
+      "treatment_osr": 89.74358974358974,
+      "SS": 30,
+      "SG": 4,
+      "GS": 5,
+      "GG": 0,
+      "difference_pp": 2.5641025641025643,
+      "scenario_cluster_ci_pp": [
+        -12.820512820512821,
+        17.94871794871795
+      ],
+      "exact_mcnemar_descriptive": 1.0,
+      "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+    },
+    {
+      "comparison": "initial_loo:L-RAG",
+      "n_pairs": 39,
+      "n_scenarios": 39,
+      "reference_success": 32,
+      "treatment_success": 34,
+      "reference_osr": 82.05128205128206,
+      "treatment_osr": 87.17948717948718,
+      "SS": 29,
+      "SG": 3,
+      "GS": 5,
+      "GG": 2,
+      "difference_pp": 5.128205128205129,
+      "scenario_cluster_ci_pp": [
+        -7.6923076923076925,
+        20.512820512820515
+      ],
+      "exact_mcnemar_descriptive": 0.7265625,
+      "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+    },
+    {
+      "comparison": "initial_loo:L-REF",
+      "n_pairs": 39,
+      "n_scenarios": 39,
+      "reference_success": 32,
+      "treatment_success": 34,
+      "reference_osr": 82.05128205128206,
+      "treatment_osr": 87.17948717948718,
+      "SS": 28,
+      "SG": 4,
+      "GS": 6,
+      "GG": 1,
+      "difference_pp": 5.128205128205129,
+      "scenario_cluster_ci_pp": [
+        -10.256410256410257,
+        20.512820512820515
+      ],
+      "exact_mcnemar_descriptive": 0.75390625,
+      "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+    },
+    {
+      "comparison": "initial_loo:L-GRD",
+      "n_pairs": 39,
+      "n_scenarios": 39,
+      "reference_success": 32,
+      "treatment_success": 36,
+      "reference_osr": 82.05128205128206,
+      "treatment_osr": 92.3076923076923,
+      "SS": 31,
+      "SG": 1,
+      "GS": 5,
+      "GG": 2,
+      "difference_pp": 10.256410256410257,
+      "scenario_cluster_ci_pp": [
+        0.0,
+        23.076923076923077
+      ],
+      "exact_mcnemar_descriptive": 0.21875,
+      "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+    },
+    {
+      "comparison": "initial_loo:L-TLS",
+      "n_pairs": 39,
+      "n_scenarios": 39,
+      "reference_success": 32,
+      "treatment_success": 34,
+      "reference_osr": 82.05128205128206,
+      "treatment_osr": 87.17948717948718,
+      "SS": 28,
+      "SG": 4,
+      "GS": 6,
+      "GG": 1,
+      "difference_pp": 5.128205128205129,
+      "scenario_cluster_ci_pp": [
+        -10.256410256410257,
+        20.512820512820515
+      ],
+      "exact_mcnemar_descriptive": 0.75390625,
+      "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+    },
+    {
+      "comparison": "initial_loo:L-N3",
+      "n_pairs": 39,
+      "n_scenarios": 39,
+      "reference_success": 32,
+      "treatment_success": 37,
+      "reference_osr": 82.05128205128206,
+      "treatment_osr": 94.87179487179488,
+      "SS": 31,
+      "SG": 1,
+      "GS": 6,
+      "GG": 1,
+      "difference_pp": 12.820512820512821,
+      "scenario_cluster_ci_pp": [
+        0.0,
+        25.641025641025642
+      ],
+      "exact_mcnemar_descriptive": 0.125,
+      "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+    },
+    {
+      "comparison": "initial_loo:L-SG",
+      "n_pairs": 39,
+      "n_scenarios": 39,
+      "reference_success": 32,
+      "treatment_success": 35,
+      "reference_osr": 82.05128205128206,
+      "treatment_osr": 89.74358974358974,
+      "SS": 30,
+      "SG": 2,
+      "GS": 5,
+      "GG": 2,
+      "difference_pp": 7.6923076923076925,
+      "scenario_cluster_ci_pp": [
+        -5.128205128205129,
+        20.512820512820515
+      ],
+      "exact_mcnemar_descriptive": 0.453125,
+      "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+    },
+    {
+      "comparison": "initial_loo:L-C2",
+      "n_pairs": 39,
+      "n_scenarios": 39,
+      "reference_success": 32,
+      "treatment_success": 34,
+      "reference_osr": 82.05128205128206,
+      "treatment_osr": 87.17948717948718,
+      "SS": 30,
+      "SG": 2,
+      "GS": 4,
+      "GG": 3,
+      "difference_pp": 5.128205128205129,
+      "scenario_cluster_ci_pp": [
+        -7.6923076923076925,
+        17.94871794871795
+      ],
+      "exact_mcnemar_descriptive": 0.6875,
+      "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+    },
+    {
+      "comparison": "hardset:L-RAG",
+      "n_pairs": 16,
+      "n_scenarios": 16,
+      "reference_success": 13,
+      "treatment_success": 13,
+      "reference_osr": 81.25,
+      "treatment_osr": 81.25,
+      "SS": 12,
+      "SG": 1,
+      "GS": 1,
+      "GG": 2,
+      "difference_pp": 0.0,
+      "scenario_cluster_ci_pp": [
+        -18.75,
+        18.75
+      ],
+      "exact_mcnemar_descriptive": 1.0,
+      "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+    },
+    {
+      "comparison": "hardset:L-REF",
+      "n_pairs": 16,
+      "n_scenarios": 16,
+      "reference_success": 13,
+      "treatment_success": 12,
+      "reference_osr": 81.25,
+      "treatment_osr": 75.0,
+      "SS": 12,
+      "SG": 1,
+      "GS": 0,
+      "GG": 3,
+      "difference_pp": -6.25,
+      "scenario_cluster_ci_pp": [
+        -18.75,
+        0.0
+      ],
+      "exact_mcnemar_descriptive": 1.0,
+      "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+    },
+    {
+      "comparison": "hardset:L-GRD",
+      "n_pairs": 16,
+      "n_scenarios": 16,
+      "reference_success": 13,
+      "treatment_success": 10,
+      "reference_osr": 81.25,
+      "treatment_osr": 62.5,
+      "SS": 10,
+      "SG": 3,
+      "GS": 0,
+      "GG": 3,
+      "difference_pp": -18.75,
+      "scenario_cluster_ci_pp": [
+        -37.5,
+        0.0
+      ],
+      "exact_mcnemar_descriptive": 0.25,
+      "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+    },
+    {
+      "comparison": "hardset:L-TLS",
+      "n_pairs": 16,
+      "n_scenarios": 16,
+      "reference_success": 13,
+      "treatment_success": 13,
+      "reference_osr": 81.25,
+      "treatment_osr": 81.25,
+      "SS": 10,
+      "SG": 3,
+      "GS": 3,
+      "GG": 0,
+      "difference_pp": 0.0,
+      "scenario_cluster_ci_pp": [
+        -31.25,
+        31.25
+      ],
+      "exact_mcnemar_descriptive": 1.0,
+      "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+    },
+    {
+      "comparison": "hardset:L-N3",
+      "n_pairs": 16,
+      "n_scenarios": 16,
+      "reference_success": 13,
+      "treatment_success": 14,
+      "reference_osr": 81.25,
+      "treatment_osr": 87.5,
+      "SS": 13,
+      "SG": 0,
+      "GS": 1,
+      "GG": 2,
+      "difference_pp": 6.25,
+      "scenario_cluster_ci_pp": [
+        0.0,
+        18.75
+      ],
+      "exact_mcnemar_descriptive": 1.0,
+      "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+    },
+    {
+      "comparison": "hardset:L-SG",
+      "n_pairs": 16,
+      "n_scenarios": 16,
+      "reference_success": 13,
+      "treatment_success": 12,
+      "reference_osr": 81.25,
+      "treatment_osr": 75.0,
+      "SS": 10,
+      "SG": 3,
+      "GS": 2,
+      "GG": 1,
+      "difference_pp": -6.25,
+      "scenario_cluster_ci_pp": [
+        -31.25,
+        18.75
+      ],
+      "exact_mcnemar_descriptive": 1.0,
+      "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+    },
+    {
+      "comparison": "hardset:L-C2",
+      "n_pairs": 16,
+      "n_scenarios": 16,
+      "reference_success": 13,
+      "treatment_success": 11,
+      "reference_osr": 81.25,
+      "treatment_osr": 68.75,
+      "SS": 11,
+      "SG": 2,
+      "GS": 0,
+      "GG": 3,
+      "difference_pp": -12.5,
+      "scenario_cluster_ci_pp": [
+        -31.25,
+        0.0
+      ],
+      "exact_mcnemar_descriptive": 0.5,
+      "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+    }
+  ],
+  "recovery": {
+    "initial_success": 94,
+    "initial_failed": 23,
+    "initial_no_report": 3,
+    "probe_runs": 26,
+    "probe_success": 22,
+    "cumulative_success": 116,
+    "remaining_unresolved": [
+      {
+        "scenario": "blind_sqli_high",
+        "seed": 42
+      },
+      {
+        "scenario": "captcha_low",
+        "seed": 42
+      },
+      {
+        "scenario": "captcha_low",
+        "seed": 7
+      },
+      {
+        "scenario": "captcha_low",
+        "seed": 123
+      }
+    ],
+    "flagged_retry_n": 20,
+    "flagged_retry_success": 12,
+    "canary_n": 5,
+    "canary_success": 5,
+    "distinct_followup_executions": 60,
+    "cohort35": "26 probes + 3 seed42 confirmations + 6 seed7/123 confirmations",
+    "hardset_16of16": "13/16 earlier reference + 3 new confirmations; not 16 new executions",
+    "multiseed_9of9": "3 seed42 + 6 additional seed7/123 confirmations; not 9 additional executions"
+  },
+  "juiceshop": {
+    "comparison": "juiceshop",
+    "n_pairs": 15,
+    "n_scenarios": 5,
+    "reference_success": 0,
+    "treatment_success": 10,
+    "reference_osr": 0.0,
+    "treatment_osr": 66.66666666666667,
+    "SS": 0,
+    "SG": 0,
+    "GS": 10,
+    "GG": 5,
+    "difference_pp": 66.66666666666667,
+    "scenario_cluster_ci_pp": [
+      26.666666666666668,
+      100.0
+    ],
+    "exact_mcnemar_descriptive": 0.001953125,
+    "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+  },
+  "bwapp": {
+    "missing_base_cells": [
+      {
+        "scenario": "bw_htmli_low",
+        "seed": 7
+      },
+      {
+        "scenario": "bw_htmli_low",
+        "seed": 42
+      },
+      {
+        "scenario": "bw_htmli_low",
+        "seed": 123
+      }
+    ],
+    "matched": {
+      "comparison": "bwapp",
+      "n_pairs": 27,
+      "n_scenarios": 9,
+      "reference_success": 14,
+      "treatment_success": 23,
+      "reference_osr": 51.851851851851855,
+      "treatment_osr": 85.18518518518519,
+      "SS": 14,
+      "SG": 0,
+      "GS": 9,
+      "GG": 4,
+      "difference_pp": 33.333333333333336,
+      "scenario_cluster_ci_pp": [
+        7.407407407407408,
+        62.96296296296296
+      ],
+      "exact_mcnemar_descriptive": 0.00390625,
+      "mcnemar_note": "Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware."
+    },
+    "reported_base_success": 14,
+    "reported_base_n": 27,
+    "reported_full_success": 23,
+    "reported_full_n": 30,
+    "base_bound_fail_percent": 46.666666666666664,
+    "base_bound_success_percent": 56.666666666666664,
+    "full_percent": 76.66666666666667,
+    "reported_fisher_p": 0.05872471727668905,
+    "base_source": "earlier bwapp_sweep; not extm Base matched in time",
+    "base_sweep_rows": 108
+  },
+  "ledger_rows": 2515,
+  "n3": {
+    "n_samples": 5849,
+    "embedding_shape": [
+      5849,
+      768
+    ],
+    "applications": {
+      "DVWA": 3509,
+      "LabApp2": 1170,
+      "LabApp3": 1170
+    },
+    "split_sizes": {
+      "training": 3510,
+      "dvwa_high_evaluation": 1169,
+      "model_selection_LabApp3": 1170
+    },
+    "unique_payloads": 1149,
+    "payloads_crossing_splits": 1149,
+    "protocol": "bench_big.py; selection by LabApp3; no independent new testbed evaluated offline"
+  },
+  "c2": {
+    "prefixes": 42,
+    "runs": 10,
+    "positive": 13,
+    "features": [
+      "iter",
+      "payload_len",
+      "has_err",
+      "is_http",
+      "n_fail",
+      "distinct_evi",
+      "stale_streak",
+      "is_new_info",
+      "level",
+      "fam_sqli",
+      "fam_blind",
+      "fam_xss"
+    ],
+    "reconstruction_matches_reported_42_10_13": true,
+    "fold_note": "Count-balanced GroupKFold(shuffle=False) reconstruction; historical exact index manifest not archived; same CV used for selection."
+  },
+  "rag_collections": [
+    {
+      "id": "c1812a8d-5e1b-4f17-8a35-671ca93cd1b5",
+      "name": "pentest_knowledge",
+      "dimension": 768,
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "config_json_str": "{}",
+      "schema_str": "{\"defaults\":{\"string\":{\"fts_index\":{\"enabled\":false,\"config\":{}},\"string_inverted_index\":{\"enabled\":true,\"config\":{}}},\"float_list\":{\"vector_index\":{\"enabled\":false,\"config\":{\"space\":\"cosine\",\"embedding_function\":{\"type\":\"known\",\"name\":\"default\",\"config\":{}},\"hnsw\":{\"ef_construction\":100,\"max_neighbors\":16,\"ef_search\":100,\"num_threads\":12,\"batch_size\":100,\"sync_threshold\":1000,\"resize_factor\":1.2}}}},\"sparse_vector\":{\"sparse_vector_index\":{\"enabled\":false,\"config\":{\"embedding_function\":{\"type\":\"unknown\"},\"bm25\":false}}},\"int\":{\"int_inverted_index\":{\"enabled\":true,\"config\":{}}},\"float\":{\"float_inverted_index\":{\"enabled\":true,\"config\":{}}},\"bool\":{\"bool_inverted_index\":{\"enabled\":true,\"config\":{}}}},\"keys\":{\"#embedding\":{\"float_list\":{\"vector_index\":{\"enabled\":true,\"config\":{\"space\":\"cosine\",\"embedding_function\":{\"type\":\"known\",\"name\":\"default\",\"config\":{}},\"source_key\":\"#document\",\"hnsw\":{\"ef_construction\":100,\"max_neighbors\":16,\"ef_search\":100,\"num_threads\":12,\"batch_size\":100,\"sync_threshold\":1000,\"resize_factor\":1.2}}}}},\"source\":{\"string\":{\"fts_index\":{\"enabled\":false,\"config\":{}},\"string_inverted_index\":{\"enabled\":true,\"config\":{}}}},\"#document\":{\"string\":{\"fts_index\":{\"enabled\":true,\"config\":{}},\"string_inverted_index\":{\"enabled\":false,\"config\":{}}}},\"category\":{\"string\":{\"fts_index\":{\"enabled\":false,\"config\":{}},\"string_inverted_index\":{\"enabled\":true,\"config\":{}}}}}}"
+    }
+  ],
+  "rag_chunk_count": 20
+}

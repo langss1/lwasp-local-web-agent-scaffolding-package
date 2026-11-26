@@ -1,0 +1,10 @@
+{
+  "controller": "PentestGPT (GreyDGL), legacy path",
+  "repo": "github.com/GreyDGL/PentestGPT",
+  "commit": "e8b1bb77d1ac00329675cec3b060aba971ec1ac8",
+  "entrypoint": "pentestgpt-legacy (pentestgpt_legacy.main:main)",
+  "llm_path": "openai_compatible provider -> http://127.0.0.1:11434/v1",
+  "reasoning_model": "qwen2.5 (ollama, same frozen digest as our arms)",
+  "parsing_model": "qwen2.5 (ollama)",
+  "pinned_at_utc": "2026-11-23T01:32:01Z"
+}

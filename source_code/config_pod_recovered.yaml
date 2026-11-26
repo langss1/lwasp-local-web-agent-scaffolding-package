@@ -1,0 +1,68 @@
+model:
+  name: "qwen3.5:latest"       # plan16: base model frozen; tag confirmed on pod (same tag the bWAPP external-validity sweep ran on, results/..._BWAPP_20261107). Was qwen2.5:latest for the DVWA headline.
+  temperature: 0.2
+  top_p: 0.9
+  seed: 42
+  base_url: "http://localhost:11434"
+  num_predict: 800            # cap generated tokens/turn (bounds time; high enough not to truncate ACTION)
+  num_ctx: 5120               # context window; scenario-aware skills shrank the prompt so this fits with headroom (lowered 8192->5120 to cut KV-cache RAM)
+  num_thread: 12               # cap CPU threads (12 cores total): run cooler/steadier ~85C instead of maxing to ~94C and thrashing the thermal guard (2026-10-14). Leaves 4 cores for XAMPP/system.
+
+embedding:
+  provider: "ollama"          # "ollama" or "sentence-transformers"
+  name: "nomic-embed-text"
+
+target:
+  base_url: "http://localhost/dvwa"
+  webroot: "/var/www/html/dvwa"   # for upload->LFI chaining (file:// inclusion path)
+  allowlist: ["localhost", "127.0.0.1"]
+  login_user: "admin"
+  login_pass: "password"
+
+run:
+  max_iterations: 15          # 10->15 (2026-11-01): laptop sweep showed 92% of failures were wall-clock timeouts at avg ~7/10 iters -- agent cut off mid-reasoning, not incapable. On the 4090 a full run is ~160s, so more attempts now help genuinely-hard scenarios (sqli_high, cmdi, brute) rather than being clipped. Applied EQUALLY to L1 (base) and L3 (system): same budget per cell, comparison stays fair.
+  max_wall_clock_s: 1500      # 900->1500: generous ceiling so a slow scenario (time-based payloads, tool calls) is never killed before finishing its iterations. On the 4090 rarely reached; it is a safety net, not the normal stop (max_iterations is).
+  action_retry_limit: 2        # max JSON-repair retries for the cognitive engine
+
+reasoning:
+  state_graph:
+    max_depth: 6
+    max_branching: 3
+    fail_threshold: 3
+  guardrail:
+    threshold: 0.92
+    max_consecutive_blocks: 2    # anti-deadlock: after N TOTAL blocks in a run, relax the guardrail so a productive refinement is not frozen out (lowered 3->2: live runs repeatedly showed the guardrail blocking the one correct payload, e.g. blind SQLi `1 OR 1=1` vs a failed `1=1`)
+  progress:                      # N2 progress-protection controller (C1, plan9.md)
+    patience: 2                  # consecutive no-new-info attempts tolerated before a dead branch may redirect
+
+rag:
+  chroma_dir: "knowledge/chroma"
+  collection_name: "pentest_knowledge"
+  chunk_size_tokens: 500
+  chunk_overlap_tokens: 50
+  top_k: 2
+
+long_term_memory:                # cross-session lessons (flash .md -> permanent)
+  store_dir: "knowledge/long_term"
+  chroma_dir: "knowledge/long_term/chroma"
+  top_k: 2
+  token_budget: 350
+
+sandbox:                         # isolated Python execution for helper scripts
+  timeout_s: 15
+
+browser:                         # headless verifier -- see the agent's browser
+  headless: true                 # set false to watch the window live
+  slow_mo_ms: 0                  # slow each action (e.g. 500) so it is followable by eye
+  # Every XSS/DOM verification saves a PNG to runs/<run_id>/screenshots/ regardless.
+
+components:                    # toggled for ablation
+  rag: true
+  reflection: true
+  guardrail: true
+  state_graph: true
+  web_search_fallback: false
+  long_term_memory: true
+
+logging:
+  runs_dir: "runs"

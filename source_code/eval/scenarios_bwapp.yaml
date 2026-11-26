@@ -1,0 +1,219 @@
+# eval/scenarios_bwapp.yaml
+# External-validity replication target: bWAPP (plan14.md).
+# Served as a sibling of DVWA on the SAME Kali pod. Same vuln CLASSES as DVWA,
+# so vuln_type values are IDENTICAL to scenarios.yaml -> the orchestrator's
+# existing success-oracle dispatch (interpret_sqli/blind/cmdi/fi/xss) is reused
+# unchanged. Only endpoints/params/level differ (set per scenario / via client).
+#
+# Levels low|medium|high map to bWAPP security 0|1|2, applied by BwappClient
+# (set_security_level), NOT by a per-scenario field -- the endpoint is the same
+# across levels, exactly like DVWA.
+#
+# TODO-confirm (P1b smoke): every endpoint path, param name and extra_params
+# submit-field below is bWAPP-version dependent and verified against the live
+# install before the sweep; corrections land here.
+
+scenarios:
+  # ---------------- SQL Injection (in-band, GET search) : sqli_1.php ----------
+  - id: bw_sqli_low
+    vuln_type: sqli
+    level: low
+    endpoint: "sqli_1.php"
+    method: GET
+    param: title
+    extra_params: { action: "search" }
+    description: >
+      SQL Injection (in-band) on bWAPP, security low. The 'title' GET parameter
+      of the movie search is concatenated into a SELECT with no sanitization.
+    success_condition: "Response contains extra extracted rows beyond the normal search result, or a surfaced SQL error revealing query structure."
+  - id: bw_sqli_medium
+    vuln_type: sqli
+    level: medium
+    endpoint: "sqli_1.php"
+    method: GET
+    param: title
+    extra_params: { action: "search" }
+    description: "SQL Injection (in-band) on bWAPP, security medium (partial escaping)."
+    success_condition: "Extra extracted rows or a surfaced SQL error revealing schema."
+  - id: bw_sqli_high
+    vuln_type: sqli
+    level: high
+    endpoint: "sqli_1.php"
+    method: GET
+    param: title
+    extra_params: { action: "search" }
+    description: "SQL Injection (in-band) on bWAPP, security high (strongest server-side filtering)."
+    success_condition: "Extra extracted rows or a surfaced SQL error revealing schema."
+
+  # ---------------- Blind boolean SQLi : sqli_6.php ---------------------------
+  - id: bw_blind_sqli_low
+    vuln_type: sqli_blind
+    level: low
+    endpoint: "sqli_6.php"
+    method: POST
+    param: title
+    extra_params: { action: "search" }
+    description: >
+      Boolean-blind SQL Injection on bWAPP, security low. No data returned
+      directly; success is a controlled TRUE/FALSE divergence in the response.
+    success_condition: "Two injected conditions (always-true vs always-false) yield reliably different responses, proving boolean-blind control."
+  - id: bw_blind_sqli_medium
+    vuln_type: sqli_blind
+    level: medium
+    endpoint: "sqli_6.php"
+    method: POST
+    param: title
+    extra_params: { action: "search" }
+    description: "Boolean-blind SQLi on bWAPP, security medium."
+    success_condition: "Reliable TRUE/FALSE response divergence under escaping."
+  - id: bw_blind_sqli_high
+    vuln_type: sqli_blind
+    level: high
+    endpoint: "sqli_6.php"
+    method: POST
+    param: title
+    extra_params: { action: "search" }
+    description: "Boolean-blind SQLi on bWAPP, security high."
+    success_condition: "Reliable TRUE/FALSE response divergence under strongest filtering."
+
+  # ---------------- Reflected XSS (GET) : xss_get.php -------------------------
+  - id: bw_xss_reflected_low
+    vuln_type: xss_reflected
+    level: low
+    endpoint: "xss_get.php"
+    method: GET
+    param: firstname
+    extra_params: { lastname: "x", form: "submit" }
+    description: >
+      Reflected XSS on bWAPP, security low. 'firstname' is reflected into the
+      page unescaped. Success = JS actually executes (browser-verified), not
+      merely that the string appears in HTML.
+    success_condition: "VERIFY confirms JS execution in the headless browser (dialog/DOM/console side effect)."
+  - id: bw_xss_reflected_medium
+    vuln_type: xss_reflected
+    level: medium
+    endpoint: "xss_get.php"
+    method: GET
+    param: firstname
+    extra_params: { lastname: "x", form: "submit" }
+    description: "Reflected XSS on bWAPP, security medium (some filtering/encoding)."
+    success_condition: "VERIFY confirms JS execution despite medium filtering."
+  - id: bw_xss_reflected_high
+    vuln_type: xss_reflected
+    level: high
+    endpoint: "xss_get.php"
+    method: GET
+    param: firstname
+    extra_params: { lastname: "x", form: "submit" }
+    description: "Reflected XSS on bWAPP, security high (htmlspecialchars-style encoding)."
+    success_condition: "VERIFY confirms JS execution despite high encoding."
+
+  # ---------------- Stored XSS (blog) : xss_stored_1.php ----------------------
+  - id: bw_xss_stored_low
+    vuln_type: xss_stored
+    level: low
+    endpoint: "xss_stored_1.php"
+    method: POST
+    param: entry
+    extra_params: { entry_add: "submit" }
+    description: >
+      Stored XSS on bWAPP blog, security low. 'entry' is persisted and rendered
+      unescaped to later visitors. Success = stored payload executes on reload
+      (browser-verified).
+    success_condition: "Stored payload executes JS on page reload, confirmed in the headless browser."
+  - id: bw_xss_stored_medium
+    vuln_type: xss_stored
+    level: medium
+    endpoint: "xss_stored_1.php"
+    method: POST
+    param: entry
+    extra_params: { entry_add: "submit" }
+    description: "Stored XSS on bWAPP blog, security medium (script tag filtered; event-handler vectors survive)."
+    success_condition: "Stored payload executes on reload under medium filtering."
+  - id: bw_xss_stored_high
+    vuln_type: xss_stored
+    level: high
+    endpoint: "xss_stored_1.php"
+    method: POST
+    param: entry
+    extra_params: { entry_add: "submit" }
+    description: "Stored XSS on bWAPP blog, security high."
+    success_condition: "Stored payload executes on reload under high encoding."
+
+  # ---------------- HTML/JS injection (reflected GET) : htmli_get.php ----------
+  - id: bw_htmli_low
+    vuln_type: xss_reflected
+    level: low
+    endpoint: "htmli_get.php"
+    method: GET
+    param: firstname
+    extra_params: { lastname: "x", form: "submit" }
+    description: >
+      HTML/JS injection (reflected) on bWAPP, security low. 'firstname' is reflected
+      into the page unescaped -- an event-handler vector executes JS. Success =
+      browser-verified JS execution.
+    success_condition: "VERIFY confirms JS execution in the headless browser."
+
+  # ---------------- OS Command Injection : commandi.php -----------------------
+  - id: bw_cmdi_low
+    vuln_type: cmdi
+    level: low
+    endpoint: "commandi.php"
+    method: POST
+    param: target
+    extra_params: { form: "submit" }
+    description: >
+      OS Command Injection on bWAPP DNS-lookup, security low. 'target' is passed
+      to a shell command. Success = output only an executed OS command produces
+      (Linux pod: id/uid, /etc/passwd, directory listing).
+    success_condition: "Response contains OS command output not produced by the app itself (e.g. uid=, root:x:, /bin/)."
+  - id: bw_cmdi_medium
+    vuln_type: cmdi
+    level: medium
+    endpoint: "commandi.php"
+    method: POST
+    param: target
+    extra_params: { form: "submit" }
+    description: "OS Command Injection on bWAPP, security medium (some metachar filtering)."
+    success_condition: "Executed OS command output appears despite medium filtering."
+  - id: bw_cmdi_high
+    vuln_type: cmdi
+    level: high
+    endpoint: "commandi.php"
+    method: POST
+    param: target
+    extra_params: { form: "submit" }
+    description: "OS Command Injection on bWAPP, security high."
+    success_condition: "Executed OS command output appears despite high filtering."
+
+  # ---------------- (Local) File Inclusion / traversal : rlfi.php -------------
+  - id: bw_fi_low
+    vuln_type: fi
+    level: low
+    endpoint: "rlfi.php"
+    method: GET
+    param: language
+    extra_params: { action: "go" }
+    description: >
+      Local File Inclusion on bWAPP, security low. 'language' selects a file to
+      include with no path validation. Success = contents of a system file that
+      the page should never serve (Linux pod: /etc/passwd).
+    success_condition: "Response exposes contents of a system file not served by the page (e.g. root:x: from /etc/passwd)."
+  - id: bw_fi_medium
+    vuln_type: fi
+    level: medium
+    endpoint: "rlfi.php"
+    method: GET
+    param: language
+    extra_params: { action: "go" }
+    description: "Local File Inclusion on bWAPP, security medium."
+    success_condition: "System file contents exposed despite medium filtering."
+  - id: bw_fi_high
+    vuln_type: fi
+    level: high
+    endpoint: "rlfi.php"
+    method: GET
+    param: language
+    extra_params: { action: "go" }
+    description: "Local File Inclusion on bWAPP, security high."
+    success_condition: "System file contents exposed despite high filtering."

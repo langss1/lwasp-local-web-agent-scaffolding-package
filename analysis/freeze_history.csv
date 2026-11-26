@@ -1,0 +1,4 @@
+﻿item,historical_freeze_timestamp,available_evidence,limitation
+five_component_additions,not_documented_in_recovered_per_run_manifest,run_dvwa_ext.FULL_EXT plus smoke/final trace chronology,file modification time or first run is not proof of a prior freeze
+non_CAPTCHA_analysis_set,not_documented_in_recovered_per_run_manifest,run_dvwa_ext.SWEEP_SCENARIOS and 39-scenario final CSVs,file modification time or first run is not proof of a prior freeze
+outcome_oracle_rules,not_documented_in_recovered_per_run_manifest,available interpreter/verifier source and archived traces,file modification time or first run is not proof of a prior freeze

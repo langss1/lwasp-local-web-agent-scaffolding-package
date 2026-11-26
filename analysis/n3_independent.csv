@@ -1,0 +1,15 @@
+predictor,family_scope,class,precision,recall,f1,support
+N3,all,blind_bit_false,0.0,0.0,0.0,12
+N3,all,blind_bit_true,0.13,0.9,0.228,10
+N3,all,confirmed,0.0,0.0,0.0,8
+N3,all,injection_point_error,0.0,0.0,0.0,8
+N3,all,no_observed_effect,0.5,0.206,0.292,34
+N3,all,reflected_unescaped,1.0,0.267,0.421,15
+P0,all,blind_bit_false,0.0,0.0,0.0,12
+P0,all,blind_bit_true,0.323,1.0,0.488,10
+P0,all,confirmed,0.778,0.875,0.824,8
+P0,all,injection_point_error,1.0,1.0,1.0,8
+P0,all,no_observed_effect,0.958,0.676,0.793,34
+P0,all,reflected_unescaped,1.0,1.0,1.0,15
+N3,all,MACRO_F1_over_supported,,,0.157,87
+P0,all,MACRO_F1_over_supported,,,0.684,87

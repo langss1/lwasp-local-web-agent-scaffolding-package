@@ -1,0 +1,64 @@
+{
+  "status": "FINAL",
+  "freeze_sha": "b80a1a5828d08d9f",
+  "target": "bwapp",
+  "scheduled_cells": 81,
+  "present_valid_cells": 81,
+  "invalid_cells": [],
+  "missing_cells": [],
+  "osr_per_arm_pp": {
+    "base": 33.33,
+    "simple_tooled": 59.26,
+    "full": 62.96
+  },
+  "osr_denominator": {
+    "base": "9/27",
+    "simple_tooled": "16/27",
+    "full": "17/27"
+  },
+  "contrasts": {
+    "base__simple_tooled": {
+      "contrast": "base__simple_tooled",
+      "paired_units": 27,
+      "discordant_ref_only": 1,
+      "discordant_tr_only": 8,
+      "paired_osr_diff_pp": 25.93,
+      "mcnemar_p": 0.0391,
+      "cluster_ci_pp": [
+        -3.7,
+        55.56
+      ]
+    },
+    "simple_tooled__full": {
+      "contrast": "simple_tooled__full",
+      "paired_units": 27,
+      "discordant_ref_only": 0,
+      "discordant_tr_only": 1,
+      "paired_osr_diff_pp": 3.7,
+      "mcnemar_p": 1.0,
+      "cluster_ci_pp": [
+        0.0,
+        11.11
+      ]
+    },
+    "base__full": {
+      "contrast": "base__full",
+      "paired_units": 27,
+      "discordant_ref_only": 1,
+      "discordant_tr_only": 9,
+      "paired_osr_diff_pp": 29.63,
+      "mcnemar_p": 0.0215,
+      "cluster_ci_pp": [
+        0.0,
+        59.26
+      ]
+    }
+  },
+  "holm_adjusted_p_orchestration": {
+    "base__simple_tooled": 0.0782,
+    "simple_tooled__full": 1.0
+  },
+  "headline_contrast": "simple_tooled__full",
+  "opportunity_parity_note": "R1-B: for browser-evidence classes (xss_/js_/open_redirect_) `base` has no opportunity to be credited (HTTP-only, cannot run the verifier). The orchestration claim therefore rests on simple_tooled->full, where both arms have identical evidence opportunity. base->full is the total-package contrast and is NOT interpreted as orchestration.",
+  "dev_set_note": "K1 development-set estimates are reported separately (descriptive); not pooled with these confirmatory units (R2-B)."
+}

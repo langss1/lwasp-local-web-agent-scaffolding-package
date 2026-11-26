@@ -1,0 +1,3 @@
+﻿comparison,n_pairs,n_scenarios,reference_success,treatment_success,reference_osr,treatment_osr,SS,SG,GS,GG,difference_pp,scenario_cluster_ci_pp,exact_mcnemar_descriptive,mcnemar_note
+juiceshop,15,5,0,10,0.0,66.66666666666667,0,0,10,5,66.66666666666667,"[26.666666666666668, 100.0]",0.001953125,Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware.
+bwapp,27,9,14,23,51.851851851851855,85.18518518518519,14,0,9,4,33.333333333333336,"[7.407407407407408, 62.96296296296296]",0.00390625,Run-pair descriptive only when seeds repeat within a scenario; cluster CI is scenario-aware.

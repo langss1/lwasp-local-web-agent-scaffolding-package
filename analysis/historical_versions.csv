@@ -1,0 +1,146 @@
+﻿component,version,source,scope
+MarkupSafe,3.0.4,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+aiohappyeyeballs,2.7.1,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+aiohttp,3.14.5,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+aiohttp-retry,2.9.1,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+aiosignal,1.4.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+annotated-doc,0.0.5,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+annotated-types,0.8.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+anyio,4.15.1,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+attrs,26.1.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+bcrypt,5.0.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+build,1.6.1,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+certifi,2026.10.23,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+charset_normalizer,3.5.2,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+chromadb,1.5.9,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+click,8.5.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+cloudpickle,3.1.2,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+cuda-bindings,13.4.4,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+cuda-pathfinder,1.8.5,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+cuda-toolkit,13.2.2,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+durationpy,0.11,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+filelock,4.2.6,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+flatbuffers,25.12.19,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+frozenlist,1.8.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+fsspec,2026.9.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+googleapis-common-protos,1.76.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+greenlet,3.5.6,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+grpcio,1.85.1,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+h11,0.16.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+hf-xet,1.8.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+httpcore,1.0.9,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+httpcore2,2.16.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+httptools,0.9.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+httpx,0.28.1,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+httpx2,2.16.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+huggingface-hub,2.4.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+idna,3.20,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+importlib-resources,7.1.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+iniconfig,2.3.1,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+jinja2,3.1.6,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+joblib,1.6.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+jsonschema,4.26.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+jsonschema-specifications,2025.9.1,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+kubernetes,37.0.1,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+markdown-it-py,4.2.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+mdurl,0.1.2,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+mmh3,5.3.1,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+mpmath,1.3.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+multidict,7.2.1,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+narwhals,2.28.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+networkx,3.7,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+numpy,2.5.4,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+nvidia-cublas,13.4.1.3,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+nvidia-cuda-cccl,13.3.4.3.1,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+nvidia-cuda-cupti,13.2.86,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+nvidia-cuda-nvrtc,13.2.86,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+nvidia-cuda-runtime,13.2.86,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+nvidia-cudnn-cu13,9.26.0.51,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+nvidia-cufft,12.2.0.57,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+nvidia-cufile,1.17.1.22,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+nvidia-cusolver,12.2.0.11,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+nvidia-cusparse,12.7.10.12,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+nvidia-cusparselt-cu13,0.8.1,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+nvidia-ml-py,13.615.71,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+nvidia-nccl-cu13,2.30.7,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+nvidia-nvjitlink,13.4.92,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+nvidia-nvshmem-cu13,3.7.2,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+nvidia-nvtx,13.2.86,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+oauthlib,4.0.1,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+ollama,0.6.3,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+onnxruntime,1.31.1,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+opentelemetry-api,1.45.2,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+opentelemetry-exporter-otlp-common,0.66b2,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+opentelemetry-exporter-otlp-proto-common,1.45.2,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+opentelemetry-exporter-otlp-proto-grpc,1.45.2,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+opentelemetry-proto,1.45.2,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+opentelemetry-sdk,1.45.2,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+opentelemetry-semantic-conventions,0.66b2,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+orjson,3.13.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+overrides,7.7.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+packaging,26.3,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+playwright,1.64.1,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+pluggy,1.7.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+propcache,0.5.4,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+protobuf,7.36.2,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+psutil,7.2.2,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+pybase64,1.5.1,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+pydantic,2.14.2,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+pydantic-core,2.50.2,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+pydantic-settings,2.16.2,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+pyee,14.0.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+pygments,2.21.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+pynvml,13.0.1,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+pypdf,6.21.4,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+pypika,0.51.1,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+pyproject_hooks,1.3.3,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+pytest,9.2.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+python-dateutil,3.0.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+python-dotenv,1.2.4,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+pyyaml,6.0.3,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+referencing,0.37.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+regex,2026.9.29,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+requests,2.34.2,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+requests-oauthlib,2.0.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+rich,15.0.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+rpds-py,2026.9.1,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+safetensors,0.8.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+scikit-learn,1.9.1,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+scipy,1.18.1,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+sentence-transformers,6.2.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+setuptools,84.2.1,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+shellingham,1.5.4,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+six,1.17.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+sympy,1.14.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+tenacity,9.2.1,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+threadpoolctl,3.7.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+tokenizers,0.23.3,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+torch,2.15.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+tqdm,4.70.1,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+transformers,5.22.1,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+triton,3.9.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+truststore,0.10.5,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+typer,0.27.3,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+typing-extensions,4.16.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+typing-inspection,0.4.4,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+tzdata,2026.6,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+urllib3,2.8.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+uvicorn,0.54.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+uvloop,0.23.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+watchfiles,1.3.0,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+websocket-client,1.9.2,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+websockets,17.4,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+yarl,1.25.1,results\RUNPOD_HASIL_PENGUJIAN_20261104\06_logs\finalize.log:442,archived installation log; not proof of unchanged version in every later phase
+Ollama server,0.40.13,06_logs/ollama_setup.log:32,setup log
+qwen2.5,845dbda0ea48,06_logs/ollama_setup.log:299,short installed-model ID only; full per-run digest unresolved
+nomic-embed-text,0a109f422b47,06_logs/ollama_setup.log:298,short installed-model ID only; full per-run digest unresolved
+qwen3.5,6488c96fa5fa,M0_inventory.md:43,"local inventory candidate, not full cloud per-run digest"
+Juice Shop,20.3.0,eval/scenarios_juiceshop.yaml header,scenario-file declaration; deployment image digest not recovered
+DVWA,not recovered,available configuration/scenario files,exact application commit required
+bWAPP,not recovered,available configuration/scenario files,exact application version/image digest required
+qwen2.5_resolved_manifest_sha256,845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e,resolved_model_digests.csv and matching local manifest,full immutable identity resolving a recorded short ID; historical per-run binding not recovered
+qwen2.5_model_layer_digest,sha256:2bada8a7450677000f678be90653b85d364de7db25eb5ea54136ada5f3933730,resolved_model_digests.csv and matching local manifest,full immutable identity resolving a recorded short ID; historical per-run binding not recovered
+qwen3.5_resolved_manifest_sha256,6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7,resolved_model_digests.csv and matching local manifest,full immutable identity resolving a recorded short ID; historical per-run binding not recovered
+qwen3.5_model_layer_digest,sha256:dec52a44569a2a25341c4e4d3fee25846eed4f6f0b936278e3a3c900bb99d37c,resolved_model_digests.csv and matching local manifest,full immutable identity resolving a recorded short ID; historical per-run binding not recovered
+nomic-embed-text_resolved_manifest_sha256,0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f,resolved_model_digests.csv and matching local manifest,full immutable identity resolving a recorded short ID; historical per-run binding not recovered
+nomic-embed-text_model_layer_digest,sha256:970aa74c0a90ef7482477cf803618e776e173c007bf957f635f1015bfcfef0e6,resolved_model_digests.csv and matching local manifest,full immutable identity resolving a recorded short ID; historical per-run binding not recovered

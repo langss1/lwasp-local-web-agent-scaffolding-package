@@ -1,0 +1,46 @@
+model:
+  name: "qwen2.5:latest"
+  temperature: 0.2
+  top_p: 0.9
+  seed: 42
+  base_url: "http://localhost:11434"
+
+embedding:
+  provider: "ollama"
+  name: "nomic-embed-text"
+
+target:
+  base_url: "http://localhost/dvwa"
+  allowlist: ["localhost", "127.0.0.1"]
+  login_user: "admin"
+  login_pass: "password"
+
+run:
+  max_iterations: 6              # reduced from spec's 10 for a fast pilot
+  max_wall_clock_s: 300           # reduced from spec's 900
+  action_retry_limit: 2
+
+reasoning:
+  state_graph:
+    max_depth: 6
+    max_branching: 3
+    fail_threshold: 3
+  guardrail:
+    threshold: 0.92
+
+rag:
+  chroma_dir: "knowledge/chroma"
+  collection_name: "pentest_knowledge"
+  chunk_size_tokens: 500
+  chunk_overlap_tokens: 50
+  top_k: 5
+
+components:
+  rag: true
+  reflection: true
+  guardrail: true
+  state_graph: true
+  web_search_fallback: false
+
+logging:
+  runs_dir: "runs"

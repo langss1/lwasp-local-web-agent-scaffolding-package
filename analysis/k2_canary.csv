@@ -1,0 +1,13 @@
+model,scenario,seed,fix_on_success,still_success,run_id
+q35,js_medium,123,0,0,k2retry-can-q35-js_medium-s123-fix1
+q35,weak_session_medium,42,0,0,k2retry-can-q35-weak_session_medium-s42-fix1
+q35,xss_stored_medium,42,0,0,k2retry-can-q35-xss_stored_medium-s42-fix1
+q35,upload_medium,7,0,0,k2retry-can-q35-upload_medium-s7-fix1
+q25,open_redirect_medium,42,1,1,k2retry-can-q25-open_redirect_medium-s42-fix1
+q25,upload_medium,123,0,0,k2retry-can-q25-upload_medium-s123-fix1
+q35,sqli_medium,42,0,0,k2retry-can-q35-sqli_medium-s42-fix1
+q35,xss_dom_medium,123,,,k2retry-can-q35-xss_dom_medium-s123-fix1
+q25,xss_dom_medium,7,,,k2retry-can-q25-xss_dom_medium-s7-fix1
+q25,open_redirect_medium,123,1,1,k2retry-can-q25-open_redirect_medium-s123-fix1
+q35,upload_medium,123,0,0,k2retry-can-q35-upload_medium-s123-fix1
+q35,blind_sqli_medium,42,0,0,k2retry-can-q35-blind_sqli_medium-s42-fix1
