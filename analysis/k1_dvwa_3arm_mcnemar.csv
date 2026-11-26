@@ -1,0 +1,7 @@
+model,pair,n_pairs,succ_a1,succ_a2,diff_dir,discordant_a1only(b),discordant_a2only(c),mcnemar_p_exact,"ci95_lo(diff a2-a1, scen-clustered)",ci95_hi
+q25,base_vs_simple_tooled,39,24,27,simple_tooled-base,4,7,0.5488,-0.179,0.308
+q25,simple_tooled_vs_full,39,27,34,full-simple_tooled,2,9,0.0654,-0.026,0.41
+q25,base_vs_full,39,24,34,full-base,1,11,0.0063,0.051,0.487
+q35,base_vs_simple_tooled,39,28,28,simple_tooled-base,7,7,1.0,-0.282,0.308
+q35,simple_tooled_vs_full,39,28,34,full-simple_tooled,1,7,0.0703,0.0,0.359
+q35,base_vs_full,39,28,34,full-base,4,10,0.1796,-0.077,0.41

@@ -1,8 +1,22 @@
-# Archival reanalysis package for IJIES 20267726
+# LWASP — Local Web-Agent Scaffolding Package
+
+Implementation and evaluation code for IJIES 20267726,
+*"Scaffolding Effects on Local Large Language Model Web Penetration Testing Agents
+via Factorial Evaluation and Component Ablation."*
 
 Version: archive-reanalysis-2026-11-21
 
-This package reproduces calculations from recovered experiment records. It does not contain new agent experiments or assert that the major revision is complete. The red manuscript and working response distinguish completed archival work from open evaluations.
+### Start here
+- **[REPRODUCE.md](REPRODUCE.md)** — exact Python environment (`requirements.lock`),
+  model download **with weight-hash verification**, and how to run (offline + live).
+- **[RESULTS.md](RESULTS.md)** — every headline number, what it means, and which file it
+  comes from (incl. the DVWA vs bWAPP access-vs-orchestration decomposition).
+- One-command re-check (no GPU/network): `python scripts/reproduce_analysis.py --check`.
+
+This repository ships machine-readable ledgers, paired outcomes, oracle specs, model/weight
+digests, and the full source; it reproduces the paper's calculations from recorded experiment
+data. The sections below document provenance honestly, including what is reconstructed and
+what remains under controlled access.
 
 ## Reproduce the numerical analysis without RunPod
 
@@ -49,11 +63,18 @@ bWAPP Base is taken from nine matching scenarios in the earlier sweep; Full is f
 
 Raw traces/screenshots and original databases remain in the author's archive; controlled access can redact sensitive fields with a recorded schema. File paths/hashes identify provenance but are not a claim that every historical trace is complete. evidence_completeness_flags.csv lists report-level successes whose selected archived trace lacks retained non-FINISH success evidence; these are not automatically adjudicated false positives. archive_conflicts.csv preserves differing copies with the same run_id instead of silently merging laptop and pod evidence.
 
-Fresh clean-snapshot/interleaved runs, a tool-matched simple agent, post-freeze confirmatory targets, a runnable public controller, multi-seed/interaction ablations, an independent N3 testbed, stage-separated timing and unchanged-retry controls remain open. This local ZIP has not been published to GitHub or submitted to the journal.
+A tool-matched simple agent (`simple_tooled`), post-freeze confirmatory targets, multi-seed/interaction ablations, an independent N3 testbed (XVWA), and stage-separated timing are **included** in this release (see RESULTS.md). Genuinely open items: a fully autonomous runnable public controller under matched local conditions (only a human-in-the-loop legacy controller could be pinned — see `controller_equivalence.csv`), a full application-reset between arms, and a clean unchanged-retry control (the matched pairing recovered 0/10, so the remediation-fix effect is not validated). Raw traces/screenshots stay in the authors' archive under controlled access.
 
 ## Additional recovered identities and pod metadata
 
 resolved_model_digests.csv includes full immutable manifest SHA-256 and model-layer digests for Qwen2.5, Qwen3.5 and nomic-embed-text. These were read from local manifests whose full hashes start with the IDs already recorded in the historical inventory/setup logs. The provenance is explicit: resolving a short ID is useful identity evidence, but is not a recovered per-run server manifest or a claim that every historical tag use was independently logged.
+
+**Reproducibility anchor = the weight-layer digest, not the short manifest ID.** The `:latest`
+tag is mutable and the short manifest ID is snapshot-specific. For qwen3.5 two short IDs appear
+(`56671c2ab938` from the eval-host `ollama list`; `6488c96fa5fa` from the re-resolved local
+immutable manifest) — these are two manifest wrappers around the **same** weight blob
+`sha256:dec52a44…`, which is identical in both. Verify that weight-layer digest (per model, in
+`resolved_model_digests.csv` and `model_manifests/*.json`); see **REPRODUCE.md §2.2**.
 
 The supplied ta_FULL_backup.tgz was inspected without running code. The recovered pod config uses /var/www/html/dvwa and num_thread=12, while the current Windows config differs. source_code/config_pod_recovered.yaml preserves that backup config. The recovered orchestrator, cognitive engine and final Full/ablation runner source files are byte-identical to the corresponding current files; recovered_metadata_manifest.csv records hashes and paths. This supports source reconstruction at the backup snapshot, without inventing a commit/freeze date for earlier runs.
 
