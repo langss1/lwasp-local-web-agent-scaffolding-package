@@ -1,0 +1,8 @@
+{
+  "cases": 51,
+  "credited": 40,
+  "out": "results/k1_stored_dom_adjudicated.csv",
+  "label": "controlled replay -- SEPARATE MEASUREMENT (not pooled with online OSR)",
+  "isolation": "isolated DB 'dvwa_iso' (distinct from campaign DB 'dvwa'); guestbook truncated before each case so no case inherits another's stored payload.",
+  "opportunity_parity": "verifier access is identical across cases; base-class cases are marked since base (HTTP-only) could not have produced this browser evidence online (R1-B)."
+}

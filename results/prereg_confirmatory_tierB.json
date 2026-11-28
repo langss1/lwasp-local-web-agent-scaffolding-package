@@ -1,0 +1,164 @@
+{
+  "frozen_at": "2026-11-25T10:16:49",
+  "purpose": "Confirmatory evidence on a held-out target chosen before inspecting results (reviewer R2-B). Dev-set K1 estimates are reported separately as development-set evidence.",
+  "target": "bwapp",
+  "scenarios": [
+    "bw_sqli_low",
+    "bw_sqli_medium",
+    "bw_cmdi_low",
+    "bw_cmdi_medium",
+    "bw_fi_low",
+    "bw_xss_reflected_low",
+    "bw_xss_reflected_medium",
+    "bw_xss_stored_low",
+    "bw_xss_stored_medium"
+  ],
+  "n_scenarios": 9,
+  "arms": [
+    "base",
+    "simple_tooled",
+    "full"
+  ],
+  "arm_component_dicts": {
+    "base": {
+      "pure_mode": true,
+      "tools_mcp": false,
+      "sandbox": false,
+      "auto_verify_xss": false,
+      "oracle_universal": false,
+      "working_memory": false,
+      "rag": false,
+      "reflection": false,
+      "state_graph": false,
+      "recon": false,
+      "context_summarizer": false,
+      "bandit": false,
+      "eyes_ml": false,
+      "progress_protection": false,
+      "use_promise": false,
+      "guardrail": false,
+      "long_term_memory": false,
+      "web_search": false,
+      "web_search_fallback": false,
+      "web_search_app4_only": false,
+      "skills": false,
+      "oast": false
+    },
+    "simple_tooled": {
+      "pure_mode": false,
+      "tools_mcp": true,
+      "sandbox": true,
+      "auto_verify_xss": true,
+      "oracle_universal": true,
+      "working_memory": false,
+      "rag": false,
+      "reflection": false,
+      "state_graph": false,
+      "recon": false,
+      "context_summarizer": false,
+      "bandit": false,
+      "eyes_ml": false,
+      "progress_protection": false,
+      "use_promise": false,
+      "guardrail": true,
+      "long_term_memory": false,
+      "web_search": false,
+      "web_search_fallback": false,
+      "web_search_app4_only": false,
+      "skills": false,
+      "oast": false
+    },
+    "full": {
+      "pure_mode": false,
+      "tools_mcp": true,
+      "sandbox": true,
+      "auto_verify_xss": true,
+      "oracle_universal": true,
+      "working_memory": true,
+      "rag": true,
+      "reflection": true,
+      "state_graph": true,
+      "recon": true,
+      "context_summarizer": true,
+      "bandit": true,
+      "eyes_ml": true,
+      "progress_protection": true,
+      "use_promise": true,
+      "guardrail": true,
+      "long_term_memory": false,
+      "web_search": false,
+      "web_search_fallback": false,
+      "web_search_app4_only": false,
+      "skills": false,
+      "oast": false
+    }
+  },
+  "arm_hashes": {
+    "base": "7ea17a240106014b",
+    "simple_tooled": "da9d746eb84a2f04",
+    "full": "66dee427706a17fd"
+  },
+  "access_axis": [
+    "tools_mcp",
+    "sandbox",
+    "auto_verify_xss",
+    "oracle_universal"
+  ],
+  "orchestration_axis": [
+    "working_memory",
+    "rag",
+    "reflection",
+    "state_graph",
+    "recon",
+    "context_summarizer",
+    "bandit",
+    "eyes_ml",
+    "progress_protection",
+    "use_promise"
+  ],
+  "models": [
+    "q25"
+  ],
+  "seeds": [
+    42,
+    7,
+    123
+  ],
+  "budget": {
+    "max_iterations": 15,
+    "max_wall_clock_s": 1500,
+    "note": "identical for every arm -- matched stopping contract (R2-A, R1-I)"
+  },
+  "scoring": {
+    "success_rule": "objective success rate (OSR): report.success == true, credited ONLY by the deterministic evidence oracle (verified non-FINISH trace observation), never by the agent's own claim.",
+    "validity_rule": "infrastructure errors (crash/timeout/parse) are recorded as INVALID and excluded from OSR denominator, reported separately.",
+    "opportunity_parity_note": "R1-B: base is HTTP-only and cannot run the browser verifier, so for browser-only effect classes it has no opportunity to be credited. The orchestration contrast of record is simple_tooled->full, where both arms have identical evidence opportunity."
+  },
+  "oracle_file": "src/reasoning/oracle_universal.py",
+  "oracle_sha16": "500fe3f926741f1e",
+  "reset_contract": {
+    "mode": "per_unit_clean_snapshot",
+    "resets": [
+      "app_db",
+      "session_cookies",
+      "security_level_cookie",
+      "persisted_content",
+      "stored_xss_artifacts"
+    ],
+    "order_policy": "interleaved: arms run back-to-back on the SAME freshly-reset snapshot per (scenario,model,seed) unit, so no arm inherits another arm's residue (R1-E, R2-B identical state).",
+    "logged_to": "results/confirmatory_reset_log.csv"
+  },
+  "scheduled_cells": 81,
+  "analysis_plan": {
+    "paired_contrasts": [
+      "base__simple_tooled",
+      "simple_tooled__full",
+      "base__full"
+    ],
+    "pairing_unit": "(scenario, model, seed) -- BETWEEN-arm paired on the SAME unit",
+    "test": "exact McNemar per contrast + scenario-cluster bootstrap CI",
+    "multiplicity": "report all three; Holm correction across the two orchestration contrasts (base__simple_tooled, simple_tooled__full) -- SET BY FREEZE",
+    "dev_set_handling": "K1 dev-set results reported separately, descriptive only; never pooled with confirmatory units."
+  },
+  "freeze_sha": "b80a1a5828d08d9f"
+}

@@ -1,0 +1,289 @@
+{
+  "files": [
+    {
+      "path": "knowledge/seclists/XSS-XSS-Bypass-Strings-BruteLogic.txt",
+      "sha16": "aee4b0513aed4339"
+    },
+    {
+      "path": "knowledge/seclists/XSS-XSS-BruteLogic.txt",
+      "sha16": "9faf159b2952897d"
+    },
+    {
+      "path": "knowledge/seclists/SQLi-sqli.auth.bypass.txt",
+      "sha16": "07887121de5aeab2"
+    },
+    {
+      "path": "knowledge/seclists/SQLi-quick-SQLi.txt",
+      "sha16": "99301faba9413833"
+    },
+    {
+      "path": "knowledge/seclists/SQLi-MySQL.fuzzdb.txt",
+      "sha16": "f4aa035bf77a5faf"
+    },
+    {
+      "path": "knowledge/seclists/SQLi-MySQL-SQLi-Login-Bypass.fuzzdb.txt",
+      "sha16": "d8c4b6064db3b477"
+    },
+    {
+      "path": "knowledge/seclists/SQLi-Generic-SQLi.txt",
+      "sha16": "09e5930609e4ce06"
+    },
+    {
+      "path": "knowledge/seclists/SQLi-Generic-BlindSQLi.fuzzdb.txt",
+      "sha16": "22ba3d13dfb64307"
+    },
+    {
+      "path": "knowledge/payloads/xss.txt",
+      "sha16": "9cafcd1bee7a969c"
+    },
+    {
+      "path": "knowledge/payloads/weak_session.txt",
+      "sha16": "97fd4c9dcd166789"
+    },
+    {
+      "path": "knowledge/payloads/upload.txt",
+      "sha16": "f7e48c7e4ed2d9eb"
+    },
+    {
+      "path": "knowledge/payloads/sqli_blind.txt",
+      "sha16": "6d380e7c2261e1b8"
+    },
+    {
+      "path": "knowledge/payloads/sqli.txt",
+      "sha16": "a4dac078c52cbba6"
+    },
+    {
+      "path": "knowledge/payloads/open_redirect.txt",
+      "sha16": "60c22334a55de14a"
+    },
+    {
+      "path": "knowledge/payloads/js.txt",
+      "sha16": "b5a6fc55ad8e5abb"
+    },
+    {
+      "path": "knowledge/payloads/fi.txt",
+      "sha16": "02aaad35e0c87e28"
+    },
+    {
+      "path": "knowledge/payloads/csrf.txt",
+      "sha16": "4785cc3609e22eab"
+    },
+    {
+      "path": "knowledge/payloads/cmdi.txt",
+      "sha16": "839f6122d3908268"
+    },
+    {
+      "path": "knowledge/payloads/brute.txt",
+      "sha16": "2184bc609dfafbe5"
+    },
+    {
+      "path": "knowledge/long_term_BACKUP_20261013_165756/lessons.jsonl",
+      "sha16": "ae95315f8c649368"
+    },
+    {
+      "path": "knowledge/long_term_BACKUP_20261013_165756/chroma/chroma.sqlite3",
+      "sha16": "9600ebcb8adf119e"
+    },
+    {
+      "path": "knowledge/long_term_BACKUP_20261013_165756/chroma/547762da-2492-4313-9d01-9b779d641cfa/link_lists.bin",
+      "sha16": "e3b0c44298fc1c14"
+    },
+    {
+      "path": "knowledge/long_term_BACKUP_20261013_165756/chroma/547762da-2492-4313-9d01-9b779d641cfa/length.bin",
+      "sha16": "1ef7eb9d0d35530f"
+    },
+    {
+      "path": "knowledge/long_term_BACKUP_20261013_165756/chroma/547762da-2492-4313-9d01-9b779d641cfa/header.bin",
+      "sha16": "03cb3ac86f3e5bcb"
+    },
+    {
+      "path": "knowledge/long_term_BACKUP_20261013_165756/chroma/547762da-2492-4313-9d01-9b779d641cfa/data_level0.bin",
+      "sha16": "0697a67ce6d14bc0"
+    },
+    {
+      "path": "knowledge/long_term/lessons.jsonl",
+      "sha16": "08e4b7afb837ebde"
+    },
+    {
+      "path": "knowledge/long_term/lessons.BAK_20261015_182101.jsonl",
+      "sha16": "b9d9c2ddaff0276a"
+    },
+    {
+      "path": "knowledge/long_term/chroma/chroma.sqlite3",
+      "sha16": "6caed54342627c62"
+    },
+    {
+      "path": "knowledge/long_term/chroma/771e131e-baaf-4d1f-8ba2-5939cf6a5ad4/link_lists.bin",
+      "sha16": "e3b0c44298fc1c14"
+    },
+    {
+      "path": "knowledge/long_term/chroma/771e131e-baaf-4d1f-8ba2-5939cf6a5ad4/length.bin",
+      "sha16": "92cb089fbdc8484d"
+    },
+    {
+      "path": "knowledge/long_term/chroma/771e131e-baaf-4d1f-8ba2-5939cf6a5ad4/header.bin",
+      "sha16": "03cb3ac86f3e5bcb"
+    },
+    {
+      "path": "knowledge/long_term/chroma/771e131e-baaf-4d1f-8ba2-5939cf6a5ad4/data_level0.bin",
+      "sha16": "bdb1b4f68eb2d758"
+    },
+    {
+      "path": "knowledge/long_term/B9/lessons.jsonl",
+      "sha16": "b65c5214a6127cf6"
+    },
+    {
+      "path": "knowledge/long_term/B9/chroma/chroma.sqlite3",
+      "sha16": "94e857659da8c15a"
+    },
+    {
+      "path": "knowledge/long_term/B9/chroma/d154d4a5-5293-4b8f-97e7-8afd813c6982/link_lists.bin",
+      "sha16": "e3b0c44298fc1c14"
+    },
+    {
+      "path": "knowledge/long_term/B9/chroma/d154d4a5-5293-4b8f-97e7-8afd813c6982/length.bin",
+      "sha16": "32b6360b1ca6fa21"
+    },
+    {
+      "path": "knowledge/long_term/B9/chroma/d154d4a5-5293-4b8f-97e7-8afd813c6982/header.bin",
+      "sha16": "03cb3ac86f3e5bcb"
+    },
+    {
+      "path": "knowledge/long_term/B9/chroma/d154d4a5-5293-4b8f-97e7-8afd813c6982/data_level0.bin",
+      "sha16": "48b3a5349e3c4873"
+    },
+    {
+      "path": "knowledge/long_term/B8/lessons.jsonl",
+      "sha16": "a1ac7242043c7652"
+    },
+    {
+      "path": "knowledge/long_term/B8/chroma/chroma.sqlite3",
+      "sha16": "fa80dc8145072475"
+    },
+    {
+      "path": "knowledge/long_term/B8/chroma/1edfd09e-17ae-4672-8ce6-d8a15f709f97/link_lists.bin",
+      "sha16": "e3b0c44298fc1c14"
+    },
+    {
+      "path": "knowledge/long_term/B8/chroma/1edfd09e-17ae-4672-8ce6-d8a15f709f97/length.bin",
+      "sha16": "079a4104424128e0"
+    },
+    {
+      "path": "knowledge/long_term/B8/chroma/1edfd09e-17ae-4672-8ce6-d8a15f709f97/header.bin",
+      "sha16": "03cb3ac86f3e5bcb"
+    },
+    {
+      "path": "knowledge/long_term/B8/chroma/1edfd09e-17ae-4672-8ce6-d8a15f709f97/data_level0.bin",
+      "sha16": "753100061eda2a2f"
+    },
+    {
+      "path": "knowledge/long_term/B10/lessons.jsonl",
+      "sha16": "04f95b893ae9fbc9"
+    },
+    {
+      "path": "knowledge/long_term/B10/chroma/chroma.sqlite3",
+      "sha16": "35991a970d7e8a43"
+    },
+    {
+      "path": "knowledge/long_term/B10/chroma/996f4fcd-7b74-47f4-adce-1d369511eeea/link_lists.bin",
+      "sha16": "e3b0c44298fc1c14"
+    },
+    {
+      "path": "knowledge/long_term/B10/chroma/996f4fcd-7b74-47f4-adce-1d369511eeea/length.bin",
+      "sha16": "ed1cfab0e2e5883d"
+    },
+    {
+      "path": "knowledge/long_term/B10/chroma/996f4fcd-7b74-47f4-adce-1d369511eeea/header.bin",
+      "sha16": "03cb3ac86f3e5bcb"
+    },
+    {
+      "path": "knowledge/long_term/B10/chroma/996f4fcd-7b74-47f4-adce-1d369511eeea/data_level0.bin",
+      "sha16": "545561656247388d"
+    },
+    {
+      "path": "knowledge/chroma/chroma.sqlite3",
+      "sha16": "5d85e7efd626feaa"
+    },
+    {
+      "path": "knowledge/chroma/90ccfebe-faf1-4e8e-988c-5bf6add3d54b/link_lists.bin",
+      "sha16": "e3b0c44298fc1c14"
+    },
+    {
+      "path": "knowledge/chroma/90ccfebe-faf1-4e8e-988c-5bf6add3d54b/length.bin",
+      "sha16": "7a12e561363385e9"
+    },
+    {
+      "path": "knowledge/chroma/90ccfebe-faf1-4e8e-988c-5bf6add3d54b/header.bin",
+      "sha16": "03cb3ac86f3e5bcb"
+    },
+    {
+      "path": "knowledge/chroma/90ccfebe-faf1-4e8e-988c-5bf6add3d54b/data_level0.bin",
+      "sha16": "b3992b1e223d7232"
+    },
+    {
+      "path": "knowledge/chroma/86be837b-a626-4241-8aa0-a088e3b0cb64/link_lists.bin",
+      "sha16": "e3b0c44298fc1c14"
+    },
+    {
+      "path": "knowledge/chroma/86be837b-a626-4241-8aa0-a088e3b0cb64/length.bin",
+      "sha16": "7a12e561363385e9"
+    },
+    {
+      "path": "knowledge/chroma/86be837b-a626-4241-8aa0-a088e3b0cb64/header.bin",
+      "sha16": "03cb3ac86f3e5bcb"
+    },
+    {
+      "path": "knowledge/chroma/86be837b-a626-4241-8aa0-a088e3b0cb64/data_level0.bin",
+      "sha16": "32074e801f5fcc32"
+    },
+    {
+      "path": "knowledge/chroma/3b4b2b39-52f4-4baf-bdc6-4166f057cf62/link_lists.bin",
+      "sha16": "e3b0c44298fc1c14"
+    },
+    {
+      "path": "knowledge/chroma/3b4b2b39-52f4-4baf-bdc6-4166f057cf62/length.bin",
+      "sha16": "22819dafeceee533"
+    },
+    {
+      "path": "knowledge/chroma/3b4b2b39-52f4-4baf-bdc6-4166f057cf62/header.bin",
+      "sha16": "03cb3ac86f3e5bcb"
+    },
+    {
+      "path": "knowledge/chroma/3b4b2b39-52f4-4baf-bdc6-4166f057cf62/data_level0.bin",
+      "sha16": "c7e2a5c66a30e0d9"
+    },
+    {
+      "path": "knowledge/chroma/3a3d2645-f1db-45c7-af25-cbf19f92f3c8/link_lists.bin",
+      "sha16": "e3b0c44298fc1c14"
+    },
+    {
+      "path": "knowledge/chroma/3a3d2645-f1db-45c7-af25-cbf19f92f3c8/length.bin",
+      "sha16": "e47e5d784ff87336"
+    },
+    {
+      "path": "knowledge/chroma/3a3d2645-f1db-45c7-af25-cbf19f92f3c8/header.bin",
+      "sha16": "03cb3ac86f3e5bcb"
+    },
+    {
+      "path": "knowledge/chroma/3a3d2645-f1db-45c7-af25-cbf19f92f3c8/data_level0.bin",
+      "sha16": "dd6df2efcad4552e"
+    },
+    {
+      "path": "knowledge/chroma/04f164bc-081c-469e-9f83-e85628068934/link_lists.bin",
+      "sha16": "e3b0c44298fc1c14"
+    },
+    {
+      "path": "knowledge/chroma/04f164bc-081c-469e-9f83-e85628068934/length.bin",
+      "sha16": "7a12e561363385e9"
+    },
+    {
+      "path": "knowledge/chroma/04f164bc-081c-469e-9f83-e85628068934/header.bin",
+      "sha16": "03cb3ac86f3e5bcb"
+    },
+    {
+      "path": "knowledge/chroma/04f164bc-081c-469e-9f83-e85628068934/data_level0.bin",
+      "sha16": "309cf0fcf87843e9"
+    }
+  ],
+  "n": 71
+}

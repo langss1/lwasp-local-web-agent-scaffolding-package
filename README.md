@@ -1,81 +1,113 @@
 # LWASP — Local Web-Agent Scaffolding Package
 
-Implementation and evaluation code for IJIES 20267726,
+Implementation and evaluation code for **IJIES 20267726**,
 *"Scaffolding Effects on Local Large Language Model Web Penetration Testing Agents
 via Factorial Evaluation and Component Ablation."*
 
-Version: archive-reanalysis-2026-11-21
+Authors: Gilang Wasis Wicaksono, Vera Suryani — School of Computing, Telkom University.
+Version: `v1.0.0` (archival reanalysis) · License: MIT (see `LICENSE`) · Cite: see `CITATION.cff`.
 
-### Start here
-- **[REPRODUCE.md](REPRODUCE.md)** — exact Python environment (`requirements.lock`),
-  model download **with weight-hash verification**, and how to run (offline + live).
-- **[RESULTS.md](RESULTS.md)** — every headline number, what it means, and which file it
-  comes from (incl. the DVWA vs bWAPP access-vs-orchestration decomposition).
-- One-command re-check (no GPU/network): `python scripts/reproduce_analysis.py --check`.
+> This repository lets a reviewer **check every number in the paper against a file**, and
+> **re-run the analysis in one command without a GPU**. If you only read one other file, read
+> **[REVIEWER_GUIDE.md](REVIEWER_GUIDE.md)** — it maps each reviewer comment and headline number
+> to its exact evidence file.
 
-This repository ships machine-readable ledgers, paired outcomes, oracle specs, model/weight
-digests, and the full source; it reproduces the paper's calculations from recorded experiment
-data. The sections below document provenance honestly, including what is reconstructed and
-what remains under controlled access.
+---
 
-## Reproduce the numerical analysis without RunPod
+## 1. One-command verification (no GPU, no network)
 
-Use Python 3.10 or later with NumPy, then run from the extracted package directory:
-
-```text
+```bash
+python -m pip install -r requirements.lock      # or just: pip install numpy
 python scripts/reproduce_analysis.py --check
 ```
 
-This reads paired CSVs and the 120-cell linkage, recomputes 20000 scenario-clustered bootstrap samples (seed 20261105), verifies unique pairing keys, and checks primary/external outcomes and recovery counts. It does not contact Ollama, applications, cloud services or the network, and does not retrain models. Running without --check additionally writes analysis/reproduced_statistics.json.
+This reads the shipped CSVs and recomputes the 20,000-replication scenario-clustered bootstrap
+(seed 20261105), the exact McNemar p-values, the 120-cell coverage linkage, and all cohort
+counts. It does **not** contact Ollama, the target apps, or the network, and does not retrain
+anything. Drop `--check` to additionally write `analysis/reproduced_statistics.json`.
 
-The original workspace reconstruction is in revision/ijies426/scripts/analyze_archives.py and build_support.py outside this portable package. It scans the original archive layout. The portable command above deliberately starts from the included machine-readable ledger/pairs instead of requiring all sensitive traces.
+For the full **live** re-run (pull the pinned model weights by digest, start the targets, run the
+agents) follow **[REPRODUCE.md](REPRODUCE.md)**.
 
-## Contents
+## 2. Headline results
 
-- analysis/: all paired successes/failures, scheduled/missing status, phase/run and cohort ledgers, target/scenario oracle documentation, installation-log version evidence, source hashes, C2 reconstructed fold membership, N3 split/label/payload manifests, and reviewer closure status.
-- source_code/: the available configuration, runner, interpreter/verifier, preprocessing and training sources, preserved as evidence. These sources include live experiment entry points; they are not invoked by the offline reproduction command.
-- datasets/: the recovered 5849-response N3 corpus, cached 5849-by-768 embeddings, corpus payload definitions, and frozen serialized N3/C2 artifacts. Loading serialized models requires a compatible scikit-learn/joblib environment; the offline numerical command does not load them.
-- documents/: the archival-stage red manuscript and working English response.
-- HASIL_TAHAP_ARSIP.md: Indonesian explanation of findings and remaining evidence gaps.
-- FILE_MANIFEST.csv: hashes of included files, excluding the manifest itself.
+Success = **Objective Success Rate (OSR)**: the fraction of valid runs an **independent
+deterministic oracle** credits from recorded target effects (SQLi row extraction, headless-browser
+XSS execution, state-change markers) — never the agent's own "FINISH" claim.
 
-## Dataset and model preparation provenance
+**The package works on both local models (DVWA, Table 4)**
 
-The supplied corpus_payloads.json is the existing payload corpus; build_corpus.py describes its construction. build_dataset.py describes collection from DVWA and the two internal applications, using collect_n3_data.py functions and declared application-specific response-marker labels. Re-running collection requires authorized live testbeds and is outside this archival stage.
+| Model | Base → Full | Source |
+|---|---|---|
+| Qwen2.5-7B | 64.1% (75/117) → 88.9% (104/117) | `analysis/primary_paired_outcomes.csv` |
+| Qwen3.5-9B | 59.0% (69/117) → 88.0% (103/117) | " |
+| **Pooled** | **61.5% (144/234) → 88.5% (207/234)** | " |
 
-bench_big.py combines 12 invariant numeric features and 768 cached embedding dimensions, fits on DVWA Low/Medium plus LabApp2 (3510 samples), and selects the model using LabApp3 (1170). DVWA High contains 1169 samples. LabApp3 is selection data, not an independent test. n3_split_manifest.csv preserves exact/normalized payload hashes and the historical split, showing shared payloads across splits. No payload-group-disjoint evaluation is claimed. The stored model artifacts are supplied for inspection, not newly trained here.
+**What drives the gain is application-dependent** (Base → Simple-Tooled → Full):
 
-C2 feature/label reconstruction uses the available train_n4_promise.py and archived C0 trajectories. The 42 prefixes/10 runs/13 positives reproduce the archived development report. Fold membership is reconstructed from current source/data and is not a recovered historical index snapshot. Candidate selection reused the reported development CV.
+| Testbed | Access (Base→Simple) | Orchestration (Simple→Full) | Source |
+|---|---|---|---|
+| **DVWA** (13 med × 3 seeds × 2 models) | +3.8 pp (n.s.) | **+16.7 pp**, p≈0.065–0.070 | `analysis/k1_dvwa_3arm_osr.csv` |
+| **bWAPP** (9 scen × 3 seeds, 7B) | **+25.9 pp**, p=0.039 | +3.7 pp (n.s.) | `analysis/confirm3_bwapp.csv` |
 
-## RAG and environment
+The full package is strong on both; *which sub-layer dominates depends on the application.*
+No single orchestration module is individually necessary (`results/K2_SUMMARY.md`).
 
-source_code/src/memory/rag_store.py documents whitespace chunking (500-word chunks, overlap 50), embedding and cosine retrieval. analysis/rag_chunk_manifest.csv exports the recovered LOCAL 20-document collection with hashes; it is not the historical 214-chunk pod snapshot. The local Chroma collection and N3 cache both support embedding dimension 768. The original pod corpus, full embedding-weight digest and exact ingestion identity remain required for full live reproduction.
+## 3. Repository map
 
-historical_versions.csv extracts versions from the archived installation log, with phase/provenance limits. requirements.txt uses version ranges and is not a historical lockfile. Short installed-model IDs are not full model digests. No current package installation or model download is presented as proof of missing historical versions. Exact DVWA/bWAPP commits, complete per-run model digest mapping and reset snapshots are not reconstructed by guesswork.
+```
+scripts/reproduce_analysis.py   one-command offline verification
+requirements.lock               137 pinned packages (exact env)
+REPRODUCE.md                    live re-run: model download (by weight digest) + run steps
+RESULTS.md                      every headline number, meaning, and source file
+REVIEWER_GUIDE.md               reviewer comment / number  ->  exact evidence file
+CITATION.cff                    how to cite (incl. Zenodo DOI)
 
-## Cohorts and outcome interpretation
+analysis/     canonical machine-readable ledgers + paired-outcome CSVs (the script reads these)
+results/      per-experiment write-ups (*_HASIL.md), pre-registration files, and the sealed
+              repro_artifact/ snapshot — named exactly as cited in the paper's Response Letter
+model_manifests/   Ollama manifests with the content-addressable weight-layer digests
+datasets/     N3 response corpus, cached embeddings, serialized N3/C2 artifacts
+source_code/  full agent source (Base / Simple-Tooled / Full), runners, oracle, training
+```
 
-The 35 follow-up records are 26 canonical probes + 3 seed42 confirmations + 6 additional seed7/123 confirmations. Twenty flagged retries and five canaries are distinct, yielding 60 follow-up executions. Cumulative 16/16 and 9/9 reuse prior/confirmation results and are not extra executions. The 116/120 coverage linkage uses 94 original successes plus 22 probe recoveries. Neither canonical coverage nor flagged recovery replaces primary OSR, and unchanged-retry controls have not been run.
+**Why two data folders:** `analysis/` is the canonical, script-readable set; `results/`
+reproduces the folder layout and filenames cited verbatim in the Response Letter's
+"Location and evidence" lines (the same canonical CSVs also sit under `results/repro_artifact/`
+as the sealed artifact copy). Either path a reviewer follows will resolve.
 
-bWAPP Base is taken from nine matching scenarios in the earlier sweep; Full is from the later final-package matrix. Complete-case 14/27 versus 23/27 removes three failed Full HTML-injection cells lacking Base counterparts. The original 23/30 Full result and the 14/30-to-17/30 Base sensitivity address a different ten-scenario scope. Scenario-aware intervals remain exploratory for five Juice Shop and nine bWAPP matched scenarios.
+## 4. The three arms (what each turns on)
 
-## Access and unresolved validation
+- **Base** — HTTP requests only (no tools, no browser, no verifier).
+- **Simple-Tooled** — Base **+ Action/Verify Layer** (6 access capabilities: external/MCP tools,
+  sandbox, headless-browser XSS verifier, passive recon, universal oracle, OAST); **all
+  orchestration OFF**. This is the *access-parity* control added for Reviewer 2.
+- **Full (LWASP)** — Simple-Tooled **+ the 10-module orchestration bundle** (RAG, trial-memory +
+  repetition guardrail, state-graph, progress monitor, backtrack scorer, reflection, summarizer,
+  bandit, auxiliary neural evidence classifier).
 
-Raw traces/screenshots and original databases remain in the author's archive; controlled access can redact sensitive fields with a recorded schema. File paths/hashes identify provenance but are not a claim that every historical trace is complete. evidence_completeness_flags.csv lists report-level successes whose selected archived trace lacks retained non-FINISH success evidence; these are not automatically adjudicated false positives. archive_conflicts.csv preserves differing copies with the same run_id instead of silently merging laptop and pod evidence.
+The exact flag each arm turns on is in `analysis/arm_capability_matrix.csv`.
 
-A tool-matched simple agent (`simple_tooled`), post-freeze confirmatory targets, multi-seed/interaction ablations, an independent N3 testbed (XVWA), and stage-separated timing are **included** in this release (see RESULTS.md). Genuinely open items: a fully autonomous runnable public controller under matched local conditions (only a human-in-the-loop legacy controller could be pinned — see `controller_equivalence.csv`), a full application-reset between arms, and a clean unchanged-retry control (the matched pairing recovered 0/10, so the remediation-fix effect is not validated). Raw traces/screenshots stay in the authors' archive under controlled access.
+## 5. Provenance, honestly
 
-## Additional recovered identities and pod metadata
+This is an **archival reanalysis** package: it reproduces the paper's calculations from recorded
+experiment data. It documents what is reconstructed and what remains under controlled access.
 
-resolved_model_digests.csv includes full immutable manifest SHA-256 and model-layer digests for Qwen2.5, Qwen3.5 and nomic-embed-text. These were read from local manifests whose full hashes start with the IDs already recorded in the historical inventory/setup logs. The provenance is explicit: resolving a short ID is useful identity evidence, but is not a recovered per-run server manifest or a claim that every historical tag use was independently logged.
+- **Reproducibility anchor = the weight-layer SHA-256, not the mutable `:latest` tag.** For
+  qwen3.5 two short manifest IDs appear (`56671c2ab938`, `6488c96fa5fa`) — both wrap the **same**
+  weight blob `sha256:dec52a44…`. Verify that digest per model in
+  `analysis/resolved_model_digests.csv` and `model_manifests/*.json` (see REPRODUCE.md §2.2).
+- Historical DVWA Base came from the initial sweep while final Full was calibrated afterwards;
+  that phase asymmetry is exactly why the **frozen three-arm decompositions** (DVWA Table 8B,
+  bWAPP Table 8A) are run separately and are the basis for the access-vs-orchestration claims.
+- Open items are stated plainly: no fully-autonomous public controller could be pinned under
+  matched local conditions (only a human-in-the-loop legacy controller — `analysis/controller_equivalence.csv`);
+  a full inter-arm application reset and a validated unchanged-retry effect were not achieved
+  (the matched retry pairing recovered 0/10 — `analysis/k2_retry_paired.csv`).
+- Raw traces/screenshots and original databases stay in the authors' archive under controlled
+  access; this package ships the ledgers, paired outcomes, oracle specs, and digests needed to
+  recompute every reported statistic.
 
-**Reproducibility anchor = the weight-layer digest, not the short manifest ID.** The `:latest`
-tag is mutable and the short manifest ID is snapshot-specific. For qwen3.5 two short IDs appear
-(`56671c2ab938` from the eval-host `ollama list`; `6488c96fa5fa` from the re-resolved local
-immutable manifest) — these are two manifest wrappers around the **same** weight blob
-`sha256:dec52a44…`, which is identical in both. Verify that weight-layer digest (per model, in
-`resolved_model_digests.csv` and `model_manifests/*.json`); see **REPRODUCE.md §2.2**.
+## 6. Cite
 
-The supplied ta_FULL_backup.tgz was inspected without running code. The recovered pod config uses /var/www/html/dvwa and num_thread=12, while the current Windows config differs. source_code/config_pod_recovered.yaml preserves that backup config. The recovered orchestrator, cognitive engine and final Full/ablation runner source files are byte-identical to the corresponding current files; recovered_metadata_manifest.csv records hashes and paths. This supports source reconstruction at the backup snapshot, without inventing a commit/freeze date for earlier runs.
-
-The Chroma SQLite database in the FULL backup also reports dimension 768 and 20 documents. pod_rag_chunks_ta_FULL_backup.csv exports its documents. The reported historical 214-chunk corpus remains unverified; the backup snapshot is not silently relabeled as that earlier corpus.
+See `CITATION.cff`. The archived snapshot has a DOI via Zenodo (added on release).

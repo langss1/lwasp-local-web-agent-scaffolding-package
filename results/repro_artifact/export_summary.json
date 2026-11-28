@@ -1,0 +1,7 @@
+{
+  "run_ledger_rows": 3908,
+  "oracle_scenarios": 68,
+  "rag_files": 71,
+  "tarball": "results/repro_artifact/repro_artifact_20261125_114501.tar",
+  "note": "controlled-access: bundle excludes raw traces; redact fields ('prompt', 'raw_body', 'body', 'transcript', 'messages', 'response_text', 'dom_snapshot', 'cookie', 'payload') from any trace export before release (R1-G)."
+}

@@ -1,0 +1,23 @@
+CONF3 3-ARM CONFIRMATORY ANALYSIS
+scipy=True
+
+================================================================
+TARGET: bwapp   (rows in CSV: 91)
+================================================================
+
+--- Per-arm pooled success (scoreable cells with a report) ---
+  base           : 15/30 =  50.0%   (dropped/no-report: 0)
+  simple_tooled  : 23/31 =  74.2%   (dropped/no-report: -1)
+  full           : 25/30 =  83.3%   (dropped/no-report: 0)
+
+--- McNemar exact (paired per scenario x seed) ---
+  full          vs base          | n_pairs=30  full=25/30  base=15/30  discordant b(full+/base-)=10 c(full-/base+)=0  p=0.001953
+  full          vs simple_tooled | n_pairs=30  full=25/30  simple_tooled=22/30  discordant b(full+/simple_tooled-)=4 c(full-/simple_tooled+)=1  p=0.375
+  simple_tooled vs base          | n_pairs=30  simple_tooled=22/30  base=15/30  discordant b(simple_tooled+/base-)=7 c(simple_tooled-/base+)=0  p=0.01562
+
+--- Mean timing per arm (seconds) ---
+  arm                 gen   action   verify    iters
+  base              25.45     0.09     0.00    15.00
+  simple_tooled     29.03    11.14     0.00    11.73
+  full              18.17     1.81     2.58     8.23
+  (base cannot early-stop: no verify tool -> always exhausts iters)

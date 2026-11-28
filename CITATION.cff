@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite the paper and this archived artifact."
+title: "LWASP — Local Web-Agent Scaffolding Package (IJIES 20267726 reproduction artifact)"
+version: "1.0.0"
+date-released: "2026-11-28"
+license: MIT
+repository-code: "https://github.com/langss1/lwasp-local-web-agent-scaffolding-package"
+authors:
+  - family-names: "Wicaksono"
+    given-names: "Gilang Wasis"
+    affiliation: "School of Computing, Telkom University, Bandung, Indonesia"
+  - family-names: "Suryani"
+    given-names: "Vera"
+    affiliation: "School of Computing, Telkom University, Bandung, Indonesia"
+# Zenodo mints the DOI when the GitHub release is published. Paste it here and in README §6:
+#   doi: "10.5281/zenodo.XXXXXXX"
+preferred-citation:
+  type: article
+  title: "Scaffolding Effects on Local Large Language Model Web Penetration Testing Agents via Factorial Evaluation and Component Ablation"
+  authors:
+    - family-names: "Wicaksono"
+      given-names: "Gilang Wasis"
+    - family-names: "Suryani"
+      given-names: "Vera"
+  journal: "International Journal of Intelligent Engineering and Systems (IJIES)"
+  year: 2026
+  notes: "Paper ID 20267726."
