@@ -19,12 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-NOTE ON INTENDED USE. This software evaluates web-application penetration-testing
-agents against intentionally vulnerable, locally hosted training applications
-(DVWA, OWASP Juice Shop, bWAPP, XVWA) over the loopback interface only. It is
-released for research and defensive-security education. Use it only against
-systems you own or are explicitly authorized to test. The authors accept no
-liability for misuse.

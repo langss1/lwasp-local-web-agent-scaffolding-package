@@ -108,6 +108,13 @@ experiment data. It documents what is reconstructed and what remains under contr
   access; this package ships the ledgers, paired outcomes, oracle specs, and digests needed to
   recompute every reported statistic.
 
-## 6. Cite
+## 6. Authorized use
+
+This code evaluates penetration-testing agents against **intentionally vulnerable, locally
+hosted training applications** (DVWA, OWASP Juice Shop, bWAPP, XVWA) over the loopback interface
+only. It is released for research and defensive-security education. Use it only against systems
+you own or are explicitly authorized to test. Licensed under MIT (`LICENSE`); no warranty.
+
+## 7. Cite
 
 See `CITATION.cff`. The archived snapshot has a DOI via Zenodo (added on release).
