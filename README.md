@@ -117,4 +117,9 @@ you own or are explicitly authorized to test. Licensed under MIT (`LICENSE`); no
 
 ## 7. Cite
 
-See `CITATION.cff`. The archived snapshot has a DOI via Zenodo (added on release).
+Archived on Zenodo with a DOI:
+
+- **Concept DOI (all versions, cite this):** [10.5281/zenodo.24620988](https://doi.org/10.5281/zenodo.24620988)
+- Version DOI (v1.0.0): [10.5281/zenodo.24620989](https://doi.org/10.5281/zenodo.24620989)
+
+See `CITATION.cff` for machine-readable metadata.
